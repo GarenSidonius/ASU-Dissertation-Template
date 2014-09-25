@@ -921,7 +921,7 @@
 % Sample settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \providetoggle{sample}                  % True = demonstration of template
-\settoggle{sample}{false}
+\settoggle{sample}{true}
 \iftoggle{sample}{%
   \newcounter{tablecounter}
   \setcounter{tablecounter}{1}
@@ -1048,6 +1048,9 @@
                                         % \subsubsection
                                         % \paragraph
                                         % \subparagraph
+\iftoggle{sample}{%
+  \include{sample_chapter}%
+}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Back matter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1112,6 +1115,9 @@
 %\include{appendix2}                     %   \include rather than \input for appendices. 
 %\include{appendix3}% etc.               %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc. 
+\iftoggle{sample}{%
+  \include{sample_appendix}%
+}{}
 
 \backmatter                             % Start back matter according to documentclass
 \makeatletter                           % Do not clear page after printing title for
