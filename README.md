@@ -43,7 +43,7 @@ formatting, e.g.:
 
 [4] This template will run with either pdftex or xetex. You will probably want to use
 xetex in order to use fonts such as Garamond, Century, etc. (Make sure these fonts are 
-installed on your system before trying to use them with xetex.) But pdftex sometimes  
+installed on your system before trying to use them with xetex.) But pdftex sometimes 
 runs much faster than xetex , so for drafting, you may want to use pdftex and then 
 check the output periodically with xetex. 
 
@@ -65,3 +65,5 @@ learn about pandoc here: http://johnmacfarlane.net/pandoc/
 
 Feel free to contact me with questions or suggestions: 
 Robert Kutter (robert@kutterconsulting.com)
+
+Find out more about me and my work here: http://kutterconsulting.com
