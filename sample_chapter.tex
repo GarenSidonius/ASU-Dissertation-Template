@@ -1,0 +1,85 @@
+\chapter{This is a chapter-level heading}
+
+\lipsum[1] 
+
+\section{This is the first section-level heading} 
+
+\lipsum[1] 
+
+\subsection{This is the first sub-section-level heading} 
+
+\lipsum[1] 
+
+\subsubsection{This is the first sub-sub-section-level heading} 
+
+\lipsum[1] 
+
+\paragraph{This is the first paragraph-level heading} 
+
+\lipsum[1] 
+
+\subparagraph{This is the first sub-paragraph-level heading} 
+
+\lipsum[1] 
+
+\section{Citation examples} 
+
+The contents of this section differ depending on the bibliography settings, specifically whether the `usebiblatex' toggle is set to `true' or `false'. 
+\iftoggle{usebiblatex}{%
+  This sentence shows citation with biblatex \parencite{searchinger_world_2013}. 
+  This is another sentence showing citation with biblatex \parencite{pathak_rural_2007}. 
+}{%
+  This sentence shows citation with natbib \citep{pathak_rural_2007}. 
+  This is another sentence showing citation with natbib \citep{searchinger_world_2013}. 
+}
+
+\section{Footnote examples} 
+
+This is a sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+This is another sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+
+\section{Block quote example} 
+
+The following is a block quote: 
+
+\begin{quote}
+\lipsum[1-2]
+\end{quote}
+
+\section{Endnote examples} 
+
+Endnotes appear in a separate section after chapters and before the reference list. 
+This is a sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+This is another sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+And here is a really long endnote to show formatting across several pages.\pagenote{\expandafter\lipsum[1-6]}
+
+\section{Table example} 
+
+See table \ref{table\arabic{tablecounter}} for an example of a table. 
+
+\begin{table} % Table float
+\caption{Here is a table caption that is especially long to show what happens when it extends to more than one line in the table of contents}
+\label{table\arabic{tablecounter}}
+\begin{tabu}{l c c} \\ \hline
+Column1 & Column2 & Column3 \\ \hline
+Row1 & 2.0 & 3.0 \\
+Row2 & 2.0 & 3.0 \\
+Row3 & 7.0 & 8.0 \\ \hline
+\end{tabu}
+\legend{\emph{Source}: Here is a source note that is especially long to show what happens when it extends to more than one line.}
+\legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
+\end{table}
+\refstepcounter{tablecounter}
+
+\section{Figure example} 
+
+See figure \ref{figure\arabic{figurecounter}} for an example of a figure. 
+
+\begin{figure}
+\label{figure\arabic{figurecounter}}
+\includegraphics[width=\maxwidth{\textwidth}]{antidorcas.jpg}
+\caption{Antidorcas marsupialis, male} 
+\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet*{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
+\legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
+\end{figure}
+\refstepcounter{figurecounter}
