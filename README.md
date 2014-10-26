@@ -70,11 +70,11 @@ can also get it here: http://users.phys.psu.edu/~collins/software/latexmk-jcc/
 
 To use 'latexmk' to process this document with pdftex, open a terminal and do: 
 
-    latexmk -pdf dissertaton_template_latex.tex
+    latexmk -pdf dissertation_template_latex.tex
 
 To use 'latexmk' to process this document with xetex, open a terminal and do: 
 
-    latexmk -pdf -xelatex dissertaton_template_latex.tex
+    latexmk -pdf -xelatex dissertation_template_latex.tex
 
 ### Making the sample file
 
@@ -92,7 +92,7 @@ To use 'latexmk' to process the sample file with xetex, open a terminal and do:
 changes and re-runs TeX whenever it's updated. It's a great tool for checking 
 formatting, e.g.: 
 
-    latexmk -pdf -xelatex -pvc dissertaton_template_latex.tex
+    latexmk -pdf -xelatex -pvc dissertation_template_latex.tex
 
 ## TeX engines
 

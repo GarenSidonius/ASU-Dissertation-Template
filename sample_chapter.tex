@@ -56,8 +56,10 @@ And here is a really long endnote to show formatting across several pages.\pagen
 \section{Table example} 
 
 See table \ref{table\arabic{tablecounter}} for an example of a table. 
+Place macros inside captions using \string\macrocapwrap. 
+See table \ref{table\arabic{tablecounter}} for a demonstration. 
 
-\begin{table} % Table float
+\begin{table}[h] % Table float
 \caption{Here is a table caption that is especially long to show what happens when it extends to more than one line in the table of contents}
 \label{table\arabic{tablecounter}}
 \begin{tabu}{l c c} \\ \hline
@@ -71,15 +73,28 @@ Row3 & 7.0 & 8.0 \\ \hline
 \end{table}
 \refstepcounter{tablecounter}
 
+\begin{table}[h] % Table float
+\caption{This table caption refers to another caption: see figure \macrocapwrap{\ref{figure1}} }
+\label{table\arabic{tablecounter}}
+\begin{tabu}{l c c} \\ \hline
+Column1 & Column2 & Column3 \\ \hline
+Row1 & 2.0 & 3.0 \\
+Row2 & 2.0 & 3.0 \\
+Row3 & 7.0 & 8.0 \\ \hline
+\end{tabu}
+\end{table}
+\refstepcounter{tablecounter}
+
+
 \section{Figure example} 
 
 See figure \ref{figure\arabic{figurecounter}} for an example of a figure. 
 
 \begin{figure}
-\label{figure\arabic{figurecounter}}
 \includegraphics[width=\maxwidth{\textwidth}]{antidorcas.jpg}
 \caption{Antidorcas marsupialis, male} 
-\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet*{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
+\label{figure\arabic{figurecounter}}
+\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
 \legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
 \end{figure}
 \refstepcounter{figurecounter}
