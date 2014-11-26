@@ -290,6 +290,10 @@
   \vspace{-0.5\baselineskip}           % (Here is the vertical space adjustment)
   }
 
+\usepackage{enumitem}                  % Control spacing in enumerate environment
+\setlist{noitemsep}                    % Remove extra vertical spacing between items in lists
+                                       % \setlist{nosep} to leave no space around whole list
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page numbering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -812,7 +816,9 @@
               isbn=false]%              % Don't print ISBN numbers
               {biblatex-chicago}        %~Other possibilities include: 'biblatex', 
                                         %   'biblatex-apa', and 'biblatex-mla'
-  \bibliography{\bibfilename} 
+  \bibliography{\bibfilename}
+  \setlength{\bibitemsep}%              % Set vertical distance between 
+    {0.5\baselineskip}%                 %   bibliography entries
   \setcounter{biburlnumpenalty}{9000}   % Break URLs in bibliography across lines
   \setcounter{biburlucpenalty}{9000}
   \setcounter{biburllcpenalty}{9000}
