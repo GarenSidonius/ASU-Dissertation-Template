@@ -739,9 +739,18 @@
                                         %   emulates 'longtable' with additional features
                                         %   from the 'tabu' package. If you don't want 
                                         %   to use it, you can comment this line out. 
+\BeforeBeginEnvironment{table}%         % Single space inside table environment
+  {\SingleSpacing}
+\AfterEndEnvironment{table}
+  {\DoubleSpacing}
+
 %%% Figures %%%
 \setfloatadjustment{figure}%            % Left justify material inside figure floats
   {\raggedright}
+\BeforeBeginEnvironment{figure}%        % Single space inside figure environment
+  {\SingleSpacing}
+\AfterEndEnvironment{figure}
+  {\DoubleSpacing}
 
 \makeatletter                           % Define custom macro called '\maxwidth{}' that
   \def\maxwidth#1{%                     %   allows you to specify the maximum width of an 
