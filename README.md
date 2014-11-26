@@ -31,6 +31,12 @@ the PDF easier to navigate
 * Uses 'memoir' documentclass, which makes it easier to change formatting and create a 
 book-length work in general
 
+## Requirements
+
+I recommend Mac users to download and install MacTeX 2014, available [here](https://tug.org/mactex/), and I recommend Windows users to download and install MiKTeX 2014, available [here](http://miktex.org/). Both of these are large TeX distributions that are (1) easy to install and (2) should contain all the packages you will need both in the template itself and for your own TeX code. 
+
+Linux users beware: The TeX version available through repositories is often out of date. Make sure to get your TeX distribution up to date, and you may need to download packages manually or customize your setup. If you're a Linux user, I trust you can get TeX working on your own.  
+
 ## Making the sample file 
 
 You can create a sample using 'dissertation_template_latex_sample.tex' and the various 
