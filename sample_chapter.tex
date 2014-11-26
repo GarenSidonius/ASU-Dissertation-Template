@@ -85,7 +85,6 @@ Row3 & 7.0 & 8.0 \\ \hline
 \end{table}
 \refstepcounter{tablecounter}
 
-
 \section{Figure example} 
 
 See figure \ref{figure\arabic{figurecounter}} for an example of a figure. 
@@ -98,3 +97,64 @@ See figure \ref{figure\arabic{figurecounter}} for an example of a figure.
 \legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
 \end{figure}
 \refstepcounter{figurecounter}
+\clearpage
+\section{Math examples} 
+
+This section contains some math-heavy text adapted from \iftoggle{usebiblatex}{\textcite{dwilkins1995}}{\citet{dwilkins1995}}. 
+In non-relativistic wave mechanics, the wave function $\psi(\mathbf{r},t)$ of a particle satisfies the Schrödinger Wave Equation
+%
+\begin{equation}
+ i\hbar\frac{\partial \psi}{\partial t}
+  = \frac{-\hbar^2}{2m} \left(
+    \frac{\partial^2}{\partial x^2}
+    + \frac{\partial^2}{\partial y^2}
+    + \frac{\partial^2}{\partial z^2}
+  \right) \psi + V \psi.
+\end{equation}
+%
+It is customary to normalize the wave equation by
+demanding that
+%
+\begin{equation}
+\int \!\!\! \int \!\!\! \int_{\textbf{R}^3}
+      \left| \psi(\mathbf{r},0) \right|^2\,dx\,dy\,dz = 1.
+\end{equation}
+%
+A simple calculation using the Schr\"{o}dinger wave
+equation shows that
+%
+\begin{equation}
+\frac{d}{dt} \int \!\!\! \int \!\!\! \int_{\textbf{R}^3}
+      \left| \psi(\mathbf{r},t) \right|^2\,dx\,dy\,dz = 0,
+\end{equation}
+%
+and hence
+%
+\begin{equation}
+\int \!\!\! \int \!\!\! \int_{\textbf{R}^3}
+      \left| \psi(\mathbf{r},t) \right|^2\,dx\,dy\,dz = 1
+\end{equation} 
+%
+for all times~$t$. If we normalize the wave function in this
+way then, for any (measurable) subset~$V$ of $\textbf{R}^3$
+and time~$t$,
+%
+\begin{equation}
+\int \!\!\! \int \!\!\! \int_V
+      \left| \psi(\mathbf{r},t) \right|^2\,dx\,dy\,dz
+\end{equation} 
+%
+represents the probability that the particle is to be found
+within the region~$V$ at time~$t$. 
+
+\begin{table}[h] % Table float
+\caption{This caption has math characters that remain lowercase: \relax\macrocapwrap{$\psi(\mathbf{r},t)$} }
+\label{table\arabic{tablecounter}}
+\begin{tabu}{l c c} \\ \hline
+Column1 & Column2 & Column3 \\ \hline
+Row1 & 2.0 & 3.0 \\
+Row2 & 2.0 & 3.0 \\
+Row3 & 7.0 & 8.0 \\ \hline
+\end{tabu}
+\end{table}
+\refstepcounter{tablecounter}
