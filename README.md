@@ -134,3 +134,5 @@ I have adapted some code from the default `pandoc` latex template.
 Feel free to contact me with questions or suggestions: Robert Kutter (robert@kutterconsulting.com)
 
 Find out more about me and my work here: http://kutterconsulting.com
+
+Copyright 2015 Robert W. Kutter
