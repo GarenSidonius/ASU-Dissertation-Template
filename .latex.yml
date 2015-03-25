@@ -1,5 +1,5 @@
 # Settings file for ShareLaTeX compilation
 # Ignore this file if running the template
 #   on your local computer
-compiler: xelatex
+compiler: pdflatex
 root_file: dissertation_template_latex_sample.tex

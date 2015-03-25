@@ -1,3 +1,5 @@
+[![PDF Status](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/output.pdf)
+
 ASU Dissertation Template
 =========================
 
@@ -19,9 +21,34 @@ template offers several new features:
 * Writes PDF metadata (including the title, name, and keywords) automatically. 
 * Uses the `memoir` document class, so it is easier to change formatting and create a book-length work in general. 
 
+## TeX engines
+
+This template will run with either `pdftex` or `xetex`. 
+You will probably want to use `xetex` in order to use one of the required fonts, such as Garamond or Century. 
+(If you are running the template on your own computer, make sure these fonts are installed on your system before trying to use them with `xetex`.) 
+But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may want to use `pdftex` and then check the output periodically with `xetex`. 
+
 ## Making PDFs with the template
 
-### Requirements 
+### On ShareLaTeX 
+
+This template also exists as a [template on ShareLaTeX](https://www.sharelatex.com/templates/55124898eee6edb00c043cf2). 
+By using ShareLaTeX, you avoid having to get a TeX distribution running on your own computer, something that several people have struggled with. 
+To use the version of this template on ShareLaTeX: 
+
+1. [Create a ShareLaTeX account](https://www.sharelatex.com/register).
+
+2. Start a new project based on this template: 
+    a. Visit [the template page](https://www.sharelatex.com/templates/55124898eee6edb00c043cf2).
+    b. Click the "`Open in ShareLaTeX`" button.
+
+3. Update the template with your own dissertation information (e.g., author name) and content. (This README file and the template file itself walks you through where and how to update the template.)  
+
+4. Click the "`Compile`" or "`Recompile`" button to make your document. 
+
+### On your own computer
+
+#### Requirements 
 
 I recommend that Windows users download and install the latest version of [MiKTeX](http://miktex.org/), and I recommend that Mac users download and install the latest version of [MacTeX](https://tug.org/mactex/). 
 Both of these are large TeX distributions that are (1) easy to install, (2) contain all the packages used in the template, and (3) probably contain any additional packages that you will want to use. 
@@ -30,21 +57,14 @@ Linux users beware: The LaTeX packages in default repositories are often out of 
 You may need to download packages manually or customize your setup. 
 If you're a Linux user, I trust you can get TeX working on your own. 
 
-### TeX engines
-
-This template will run with either `pdftex` or `xetex`. 
-You will probably want to use `xetex` in order to use one of the required fonts, such as Garamond or Century. 
-(Make sure these fonts are installed on your system before trying to use them with `xetex`.) 
-But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may want to use `pdftex` and then check the output periodically with `xetex`. 
-
-### Making with latexmk
+#### Making with latexmk
 
 I recommend using `latexmk` to typeset your document. 
 `latexmk` is an excellent command line tool that will run and re-run TeX, BibTeX, biber, etc. until the document is completely typeset. 
 If you use `latexmk`, you will not need to manually run `pdftex`, then `biber`, then `pdftex` to format citations, for example. 
 `latexmk` is usually bundled with TeX distributions, but you can also get it [here](http://users.phys.psu.edu/~collins/software/latexmk-jcc/). 
 
-### Step-by-step: Making the sample file 
+#### Step-by-step: Making the sample file 
 
 To preview the formatting in the full template, you can create a sample using `dissertation_template_latex_sample.tex`. 
 
@@ -72,15 +92,16 @@ Or use `latexmk` to process the sample file with `pdftex` by entering the follow
     latexmk -pdf dissertation_template_latex_sample.tex
 
 Both of these commands should produce a PDF called `dissertation_template_latex_sample.pdf`, which is the sample document. 
+Click [here](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/output.pdf) to view the sample document built with `pdftex`. 
 
-### Step-by-step: Making your dissertation/thesis with the template
+#### Step-by-step: Making your dissertation/thesis with the template
 
 Follow the same steps for making the sample file in the previous section, but change the name of the `*.tex` file from `dissertation_template_latex_sample.tex` to `dissertation_template_latex.tex`. 
 For example, use `latexmk` to process the template file with `xetex` by entering the following in the terminal: 
 
     latexmk -pdf -xelatex dissertation_template_latex.tex
 
-### Continuous preview mode
+#### Continuous preview mode
 
 `latexmk` also has a continuous preview mode (initiated with the flag `-pvc`), which watches a `*.tex` file and all supporting files (including separate chapter files) for changes. 
 When any of these files are changed, `latexmk` automatically re-runs TeX and produces a new PDF. 
@@ -116,6 +137,7 @@ This template uses the `memoir` document class.
 The `memoir` document class has excellent [documentation](http://www.tex.ac.uk/ctan/macros/latex/contrib/memoir/memman.pdf), so if you need to change the formatting for some reason or if you need to understand what this code is doing, start by checking the `memoir` documentation. 
 `memoir` also offers a lot of features if you need to do something not already included in the template (e.g., numbering equations consistently). 
 And of course, [CTAN](http://www.ctan.org/) has documentation for all the packages used in this template. 
+ShareLaTeX also has [excellent documentation](https://www.sharelatex.com/learn/Main_Page) both on LaTeX in general and using ShareLaTeX. 
 
 ## Currently no style or class
 
@@ -126,13 +148,13 @@ If there is enough interest in either a style file or packaging everything in a 
 
 ## Pandoc
 
-I have adapted some code from the default `pandoc` latex template. 
-`pandoc` is a great utility, and you can learn about it [here](http://johnmacfarlane.net/pandoc/). 
+I have adapted some code from the default Pandoc latex template. 
+Pandoc is a great utility, and you can learn about it [here](http://johnmacfarlane.net/pandoc/). 
 
 ## Contact
 
 Feel free to contact me with questions or suggestions: Robert Kutter (robert@kutterconsulting.com)
 
-Find out more about me and my work here: http://kutterconsulting.com
+Find out more about me and my work here: <http://kutterconsulting.com>
 
 Copyright 2015 Robert W. Kutter
