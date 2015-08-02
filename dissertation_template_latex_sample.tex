@@ -963,9 +963,6 @@
 \listoffigures                          % List of Figures should appear in TOC, so use 
                                         %   unstarred version of \listoffigures
 
-\pagestyle{ASU}                         % Switch back to regular page style for remainder  
-                                        %   of the document
-
 \phantomsection                         % \phantomsection is needed before using 
                                         %   \addtocontents when it contains certain macros
                                         %   when also using 'hyperref' package
@@ -989,6 +986,8 @@
 \clearpage                              % Note: All these changes have to be above a 
                                         %   a '\clearpage' before '\mainmatter'
 
+\pagestyle{ASU}                         % Switch back to regular page style for remainder  
+                                        %   of the document
 \closecontentslistsetup                 % Undo page layout for contents lists
 
 %\chapter{Definitions}                   %~OTHER LISTS (optional)
