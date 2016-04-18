@@ -690,7 +690,7 @@
                                         %   'biblatex-apa', and 'biblatex-mla'
   \bibliography{\bibfilename}
   \setlength{\bibitemsep}%              % Set vertical distance between 
-    {0.5\baselineskip}%                 %   bibliography entries
+    {0.5\baselineskip}%                 %   bibliography entries 
   \setcounter{biburlnumpenalty}{9000}   % Break URLs in bibliography across lines
   \setcounter{biburlucpenalty}{9000}
   \setcounter{biburllcpenalty}{9000}
@@ -705,8 +705,7 @@
                                         %   'asudis'. I do not know where 'asudis' came
                                         %   from, but apparently it formats citations
                                         %   correctly because it was included with the 
-                                        %   previous LaTeX template. 
-  \renewcommand{\bibname}{\bibheading}%  
+                                        %   previous LaTeX template.   
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1027,10 +1026,23 @@
   \setsecnumdepth{all}%                 % Turn section numbering back on after printing
 }{}
 
+\chapter*{\bibheading}                  % In the running text, use a chapter-level heading 
+                                        % for the bibliography section 
+\phantomsection                         
+\addcontentsline{toc}{chapter}{%        % In the TOC, add a custom chapter-level heading 
+  \hspace{-\cftchapterindent}%          % that will be flush against the left margin 
+  \bibheading%
+}    
+\phantomsection
+\addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
+  {\protect\markboth{\bibheading}{Page}}%   the bibliography heading (unlikely since 
+                                        %   the appendices follow quickly) 
 \iftoggle{usebiblatex}{%                % Output the bibliography
-  \printbibliography[title=\bibheading] % Using a 'biblatex' package
+  \printbibliography[heading=none]      % Using a 'biblatex' package; do not let 
+                                        %   'biblatex' output a heading 
 }{%                                     
-  \bibliographystyle{\natbibstyle}      % Using 'natbib'
+  \renewcommand\bibsection{}            % Do not let 'natbib' output a heading 
+  \bibliographystyle{\natbibstyle}      % Using 'natbib' to print bibliography 
   \bibliography{\bibfilename}
 }
 
