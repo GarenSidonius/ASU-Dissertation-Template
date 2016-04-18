@@ -32,7 +32,7 @@ But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may w
 
 ### On ShareLaTeX 
 
-This template also exists as a [template on ShareLaTeX](https://www.sharelatex.com/templates/55124898eee6edb00c043cf2). 
+This template also exists as a [template on ShareLaTeX](https://www.sharelatex.com/templates/5714e0595dc3606e54ee0469). 
 By using ShareLaTeX, you avoid having to get a TeX distribution running on your own computer, something that several people have struggled with. 
 To use the version of this template on ShareLaTeX: 
 
