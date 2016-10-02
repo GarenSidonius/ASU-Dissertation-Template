@@ -1036,10 +1036,10 @@
   \hspace{-\cftchapterindent}%          % that will be flush against the left margin 
   \bibheading%
 }    
-\phantomsection
-\addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
-  {\protect\markboth{\bibheading}{Page}}%   the bibliography heading (unlikely since 
-                                        %   the appendices follow quickly) 
+%\phantomsection
+%\addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
+%  {\protect\markboth{\bibheading}{Page}}%   the bibliography heading (unlikely since 
+%                                        %   the appendices follow quickly) 
 \iftoggle{usebiblatex}{%                % Output the bibliography
   \printbibliography[heading=none]      % Using a 'biblatex' package; do not let 
                                         %   'biblatex' output a heading 
