@@ -38,7 +38,7 @@
 \makeatother
 \usepackage{changepage}                 % For changing page layout (e.g., margins) in the
                                         %   middle of the document
-\usepackage{calc}					    % Calculate text widths; used in page layout
+\usepackage{calc}					              % Calculate text widths; used in page layout
                                         %   changes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,7 +121,7 @@
                                         %
                                         %~Set up your font in pdftex here
                                         %
-\else 									% If xetex or luatex
+\else 									                % If xetex or luatex
   \ifxetex                              % If xetex
     \usepackage{mathspec}               % Matches non-math open-type font to math
                                         %   open-type font (use 'mathspec' if you want to
@@ -142,10 +142,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Line spacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DoubleSpacing                         % True double spacing
-\BeforeBeginEnvironment{quote}         % Memoir leaves most special material
-  {\SingleSpacing}                     %   single spaced, but makes block quotes
-\AfterEndEnvironment{quote}%           %   double-spaced; fix to follow ASU style guide
+\DoubleSpacing                          % True double spacing
+\BeforeBeginEnvironment{quote}          % Memoir leaves most special material
+  {\SingleSpacing}                      %   single spaced, but makes block quotes
+\AfterEndEnvironment{quote}%            %   double-spaced; fix to follow ASU style guide
   {\vspace{-\baselineskip} %
   \DoubleSpacing}
 \BeforeBeginEnvironment{quotation}%
@@ -154,17 +154,17 @@
   {\vspace{-\baselineskip} %
   \DoubleSpacing}
 
-\setlength{\footnotesep}{\baselineskip}% Double space *between* footnotes
-\renewcommand*{\footnoterule}{%        % Redefine footnoterule so that initial footnote
-  \kern-3pt%                           %   still appears right under the rule (changing
-  \hrule width 0.4\columnwidth         %   \footnotesep also changes the space between the
-  \kern 2.6pt                          %   rule and the first footnote
-  \vspace{-0.5\baselineskip}           % (Here is the vertical space adjustment)
+\setlength{\footnotesep}{\baselineskip} % Double space *between* footnotes
+\renewcommand*{\footnoterule}{%         % Redefine footnoterule so that initial footnote
+  \kern-3pt%                            %   still appears right under the rule (changing
+  \hrule width 0.4\columnwidth          %   \footnotesep also changes the space between the
+  \kern 2.6pt                           %   rule and the first footnote
+  \vspace{-0.5\baselineskip}            % (Here is the vertical space adjustment)
   }
 
-\usepackage{enumitem}                  % Control spacing in enumerate environment
-\setlist{noitemsep}                    % Remove extra vertical spacing between items in lists
-                                       % \setlist{nosep} to leave no space around whole list
+\usepackage{enumitem}                   % Control spacing in enumerate environment
+\setlist{noitemsep}                     % Remove extra vertical spacing between items in lists
+                                        % \setlist{nosep} to leave no space around whole list
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page numbering
@@ -349,9 +349,9 @@
 
 % If not using 'hyperref', use the following commands to adjust 'part' and 'chapter'
 %   level headings in the TOC
-%\renewcommand*{\cftpartfont}%         % Uppercase 'part' and 'chapter' headings
-%  {\normalfont\MakeTextUppercase}     % Note: Sending \MakeTextUppercase to the TOC
-%\renewcommand*{\cftchapterfont}%      %   conflicts with hyperref and breaks it!
+%\renewcommand*{\cftpartfont}%          % Uppercase 'part' and 'chapter' headings
+%  {\normalfont\MakeTextUppercase}      % Note: Sending \MakeTextUppercase to the TOC
+%\renewcommand*{\cftchapterfont}%       %   conflicts with hyperref and breaks it!
 %  {\normalfont\MakeTextUppercase}%
 
 \usepackage{titlecaps}                  % Set up headline style for captions in the
@@ -800,7 +800,7 @@
 \edef\theonelinetitle%
   {\onelinetitle}
 
-\renewcommand*{\do}[1]{{#1}\ }%          % Build keyword string to output to pdf document
+\renewcommand*{\do}[1]{{#1}\ }%         % Build keyword string to output to pdf document
 \newcommand*{\pdfkeywordsstring}{%
   \dolistloop{\keywords}%
 }
@@ -871,7 +871,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\copyrightpageASU}{%          % Create copyright page
+\newcommand{\copyrightpageASU}{%        % Create copyright page
   \thispagestyle{empty}
   \titlepagesetup
   ~\\ \vfill
@@ -1020,7 +1020,7 @@
 \SingleSpacing                          % Back matter should be single spaced
 
 \edef\defaulttolerance{\the\tolerance}
-\tolerance 500                         % Increase tolerance to prevent material extending into margins
+\tolerance 500                          % Increase tolerance to prevent material extending into margins
 \hbadness 500
 
 \iftoggle{useendnotes}{%                % If you're using endnotes, output them here
