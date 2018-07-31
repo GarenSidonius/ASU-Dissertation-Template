@@ -1,14 +1,12 @@
-[![PDF Status](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/output.pdf)
-
 ASU Dissertation Template
 =========================
 
-This is a LaTeX template for typesetting Arizona State University dissertations and theses following the guidelines in the September 2014 format manual (the latest version at the time of posting).
+This is a LaTeX template for typesetting Arizona State University (ASU) dissertations and theses following ASU's format manual.
 The template file is `dissertation_template_latex.tex`.
 
 ## Features
 
-Arizona State University already offers a LaTeX dissertation template, but this new
+Arizona State University already offers a LaTeX dissertation template, but this
 template offers several new features:
 
 * Includes all required and optional sections, including a copyright page, dedication, acknowledgements, preface, endnotes, and biographical sketch.
@@ -32,19 +30,8 @@ But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may w
 
 ### On ShareLaTeX
 
-This template also exists as a [template on ShareLaTeX](https://www.sharelatex.com/templates/5714e0595dc3606e54ee0469).
-By using ShareLaTeX, you avoid having to get a TeX distribution running on your own computer, something that several people have struggled with.
-To use the version of this template on ShareLaTeX:
-
-1. [Create a ShareLaTeX account](https://www.sharelatex.com/register).
-
-2. Start a new project based on this template:
-    a. Visit [the template page](https://www.sharelatex.com/templates/55124898eee6edb00c043cf2).
-    b. Click the "`Open in ShareLaTeX`" button.
-
-3. Update the template with your own dissertation information (e.g., author name) and content. (This README file and the template file itself walks you through where and how to update the template.)
-
-4. Click the "`Compile`" or "`Recompile`" button to make your document.
+Start a new project in ShareLaTeX and copy in the files from this repository.
+ShareLaTeX can make a PDF from these TeX files online without your needing to install TeX on your own computer.
 
 ### On your own computer
 
@@ -157,4 +144,4 @@ Feel free to contact me with questions or suggestions: Robert Kutter (robert@kut
 
 Find out more about me and my work here: <http://kutterconsulting.com>
 
-Copyright 2015 Robert W. Kutter
+Copyright 2018 Robert W. Kutter
