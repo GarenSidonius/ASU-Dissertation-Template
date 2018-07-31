@@ -2,11 +2,11 @@
 % ASU Dissertation Template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright 2015 Robert W. Kutter (robert@kutterconsulting.com)
-% 
+%
 %   See also: http://kutterconsulting.com
-% 
-% For guidance on using this file, see the README. 
-%  
+%
+% For guidance on using this file, see the README.
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Preamble
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,8 +16,8 @@
                oneside,                 % No verso and recto differences
                \pointsize]              % Uses the font size defined above
                {memoir}
-\renewcommand{\cleardoublepage}%        % \cleardoublepage will create entirely blank 
-  {\clearpage}%                         %   pages depending on settings (e.g., usually 
+\renewcommand{\cleardoublepage}%        % \cleardoublepage will create entirely blank
+  {\clearpage}%                         %   pages depending on settings (e.g., usually
                                         %   before start of \mainmatter); redefine it here
                                         %   so that no entirely blank pages are created
                                         %   automatically
@@ -26,19 +26,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}                   % For importing image files
 \usepackage{etoolbox}                   % For advanced commands throughout preamble
-\usepackage{microtype}                  %~Improves kerning and protrusion (optional); 
-                                        %   See here for an introduction: 
+\usepackage{microtype}                  %~Improves kerning and protrusion (optional);
+                                        %   See here for an introduction:
                                         %   http://www.khirevich.com/latex/microtype/
 
 \providetoggle{usemicrotype}            % TRUE = microtype is being used
-\makeatletter                           %   (Used to turn of microtype protrusion in the 
+\makeatletter                           %   (Used to turn of microtype protrusion in the
 \@ifpackageloaded{microtype}%           %   table of contents.)
   {\settoggle{usemicrotype}{true}}%
   {\settoggle{usemicrotype}{false}}
 \makeatother
-\usepackage{changepage}                 % For changing page layout (e.g., margins) in the 
+\usepackage{changepage}                 % For changing page layout (e.g., margins) in the
                                         %   middle of the document
-\usepackage{calc}					    % Calculate text widths; used in page layout 
+\usepackage{calc}					    % Calculate text widths; used in page layout
                                         %   changes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,39 +47,39 @@
 \listadd{\titlelines}%
   {First Line of the Title}             %<Enter the title of the dissertation
 \listadd{\titlelines}%
-  {Second Line of the Title}            % If you want to 
+  {Second Line of the Title}            % If you want to
                                         %   split the title across lines,
-                                        %   use another \listadd command for the 
+                                        %   use another \listadd command for the
                                         %   second line
 \newcommand*\Author{Your Name}                      %<Enter your name; must match official transcript
 \newcommand*{\documentname}%
   {Dissertation}                        %<Enter the type of document (capitalized)
 \newcommand*{\degreename}
   {Doctor of Philosophy}                %<Enter the type of degree (capitalized)
-\newcommand*\defdate{Month Year}                       %<Give month (written out fully) and year of 
+\newcommand*\defdate{Month Year}                       %<Give month (written out fully) and year of
                                         %   the oral defense
 \listadd{\committeechair}{Chair Name}   %<Enter committee chair name; use \listadd for
 %\listadd{\committeechair}{Another name}%   for additional names
-\newcommand*{\chairlabel}{Chair}        %<If you have co-chairs, replace this text with 
+\newcommand*{\chairlabel}{Chair}        %<If you have co-chairs, replace this text with
                                         %   'Co-Chair'
 \listadd{\committeemember}{Member Name} %<Enter committee member names; use \listadd for
 \listadd{\committeemember}{Member Name} %   additional names
-\newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be: 
+\newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be:
                                         %  May, August, or December
 \newcommand*{\gradyear}{Year}           %<Enter the graduation year, e.g. 2014
 
 \listadd{\keywords}{keyword 1}          %<Enter keywords; use \listadd for
 \listadd{\keywords}{keyword 2}          %   additional names (up to 6)
 \newcommand*{\graddate}{\gradmonth%     % Compose full graduation date
-  \space\gradyear}    
+  \space\gradyear}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page layout
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \settrimmedsize{\stockheight}%          % Specifies \paperheight and \paperwidth
-  {\stockwidth}{*} 
-\settrims{0pt}{0pt}                     % Set location of page in relation to the stock. 
-                                        % Paper and stock size are equivalent, 
+  {\stockwidth}{*}
+\settrims{0pt}{0pt}                     % Set location of page in relation to the stock.
+                                        % Paper and stock size are equivalent,
                                         % so both \trimtop and \trimedge are set to 0pt
 \newlength{\forfootskip}
 \setlength{\forfootskip}%
@@ -88,13 +88,13 @@
 \setlength{\textblockheight}{9.0in}     %   for footers, keeping page numbers outside
 \addtolength{\textblockheight}%         %   the 1in vertical margins
   {-\forfootskip}
-\settypeblocksize{\textblockheight}%    % Calculated by 1.0in vertical margins and 
-  {*}{*}                                %   letting margins set the width of the typeblock                      
-\setulmargins{1.0in}{*}{*}              % Set upper margin (\uppermargin, not \topmargin); 
+\settypeblocksize{\textblockheight}%    % Calculated by 1.0in vertical margins and
+  {*}{*}                                %   letting margins set the width of the typeblock
+\setulmargins{1.0in}{*}{*}              % Set upper margin (\uppermargin, not \topmargin);
                                         %   calculate the bottom margin
 \setlrmarginsandblock{1.25in}{1.25in}{*}%~Set margins and calculate width of typeblock
 \setheaderspaces{*}{0.5\baselineskip}{*}% Arguments: '\headdrop', '\headsep', and/or ratio
-                                        %   Note: This is only used in the list of 
+                                        %   Note: This is only used in the list of
                                         %   contents sections
 \setheadfoot{\baselineskip}%            % Set '\headheight' and '\footskip'
   {\forfootskip}
@@ -104,26 +104,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[T1]{fontenc}                % Standard option to handle, e.g., accented 
+\usepackage[T1]{fontenc}                % Standard option to handle, e.g., accented
                                         %   characters like 'ö' better
-\usepackage{amssymb,mathtools}          % For AMS-LaTeX, see here for more: 
+\usepackage{amssymb,mathtools}          % For AMS-LaTeX, see here for more:
                                         %     http://www.ams.org/publications/authors/tex/amslatex
                                         % ('mathtools' loads and extends 'amsmath')
 \usepackage{ifxetex,ifluatex}           % Can check if XeTeX or LuaTeX was used to typeset
 \usepackage{fixltx2e}                   % Provides \textsubscript
-\IfFileExists{upquote.sty}%             % Use upquote if available, for 
+\IfFileExists{upquote.sty}%             % Use upquote if available, for
   {\usepackage{upquote}}{}              %   straight quotes in verbatim environments
-                                        
-% Load fonts depending on the 
+
+% Load fonts depending on the
 %   typesetting engine
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0   % If pdftex
   \usepackage[utf8]{inputenc}           %   'utf8' should match the encoding of this file
                                         %
                                         %~Set up your font in pdftex here
                                         %
-\else 									% If xetex or luatex 
+\else 									% If xetex or luatex
   \ifxetex                              % If xetex
-    \usepackage{mathspec}               % Matches non-math open-type font to math 
+    \usepackage{mathspec}               % Matches non-math open-type font to math
                                         %   open-type font (use 'mathspec' if you want to
                                         %   write math in unicode)
     \usepackage{xunicode}               % Convert LaTeX character macros to unicode
@@ -131,20 +131,20 @@
     \usepackage{fontspec}               % Use fontspec for (open type) font selection
   \fi
   \defaultfontfeatures{Mapping=tex-text,% Font spec setting
-    Scale=MatchLowercase} 
+    Scale=MatchLowercase}
   \newcommand*{\euro}{€}
   \setmainfont{Garamond}                %<Set the main font; make sure the font is correct
                                         %   for the font size (See ASU Style Guide)
 %  \setmathfont(Digits,Latin,Greek)%     %~Uncomment two lines to set a font for math%
-%    {MATHFONT} 
+%    {MATHFONT}
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Line spacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DoubleSpacing                         % True double spacing
-\BeforeBeginEnvironment{quote}         % Memoir leaves most special material 
-  {\SingleSpacing}                     %   single spaced, but makes block quotes 
+\BeforeBeginEnvironment{quote}         % Memoir leaves most special material
+  {\SingleSpacing}                     %   single spaced, but makes block quotes
 \AfterEndEnvironment{quote}%           %   double-spaced; fix to follow ASU style guide
   {\vspace{-\baselineskip} %
   \DoubleSpacing}
@@ -179,7 +179,7 @@
 \newlength{\savedfootskip}
 \setlength{\savedfootskip}{\footskip}
 \newcommand{\titlepagesetup}{%          % Page layout for title page
-  \changepage%                          % Adjustment to page dimensions: 
+  \changepage%                          % Adjustment to page dimensions:
     {\savedfootskip}%                   %   text height
     {}%                                 %   text width
     {}%                                 %   even-side margin
@@ -203,7 +203,7 @@
   \begin{center}
   \SingleSpacing
   \thispagestyle{empty}
-    \renewcommand*{\do}[1]{##1 \\[\baselineskip]} 
+    \renewcommand*{\do}[1]{##1 \\[\baselineskip]}
     \dolistloop{\titlelines}
     by \\[\baselineskip]
     \Author \\[4\baselineskip]
@@ -213,9 +213,9 @@
     \vfill                              % Vertically center the portion below
     Approved \defdate~by the \\
     Graduate Supervisory Committee: \\[\baselineskip]
-    \renewcommand*{\do}[1]{##1, \chairlabel \\} 
-    \dolistloop{\committeechair} 
-    \renewcommand*{\do}[1]{##1 \\} 
+    \renewcommand*{\do}[1]{##1, \chairlabel \\}
+    \dolistloop{\committeechair}
+    \renewcommand*{\do}[1]{##1 \\}
     \dolistloop{\committeemember}
     \vfill                              % Vertically center the portion above
     ARIZONA STATE UNIVERSITY \\[\baselineskip]
@@ -232,27 +232,27 @@
 % Note: memoir also has \book and \part commands; do not use these
 \makechapterstyle{ASU}{%                % Define chapter heading style
   \renewcommand*{\chapterheadstart}{}   % Chapter title flush with top margin
-  \renewcommand*{\chapnamefont}%        % Set font for 'Chapter' or 'Appendix' 
+  \renewcommand*{\chapnamefont}%        % Set font for 'Chapter' or 'Appendix'
     {\normalfont}
   \renewcommand*{\chapnumfont}%         % Set font for number in chapter headings
     {\normalfont}
-  \renewcommand*{\afterchapternum}%     % Insert a double line break after 
+  \renewcommand*{\afterchapternum}%     % Insert a double line break after
     {\\[\baselineskip]}                 %   chapter number
   \renewcommand*{\chaptitlefont}%       % Set font for chapter title name
     {\normalfont}
   \setlength{\afterchapskip}{0pt}       % Set vertical space between chapter title and
                                         %   first paragraph; equivalent to one line break
                                         %   (vertical space = \afterchapskip + \baselineskip)
-                                        % Note: This \afterchapskip value is only used in 
+                                        % Note: This \afterchapskip value is only used in
                                         %   front matter
   \renewcommand*{\printchapternum}{%    % Center justify chapter number
     \centering \chapnumfont %
-    \thechapter}                                        
-  \renewcommand*{\printchaptertitle}[1]%% Center justify 
-    {\expandafter\centering %           %   \MakeUppercase has issues; see here for some 
+    \thechapter}
+  \renewcommand*{\printchaptertitle}[1]%% Center justify
+    {\expandafter\centering %           %   \MakeUppercase has issues; see here for some
     \expandafter\chaptitlefont %        %   details: https://tex.stackexchange.com/questions/35680/uppercase-in-newcommand
     \expandafter\MakeUppercase %        %   Accented characters and some fonts may not
-    \expandafter{##1}}                  %   uppercase correctly; if that happens, just 
+    \expandafter{##1}}                  %   uppercase correctly; if that happens, just
                                         %   type the chapter title in uppercase
 }
 
@@ -268,9 +268,9 @@
   {\baselineskip}
 
 \setbeforesecskip{\divisionbeforeskip}  % Apply default formatting to all heading levels
-\setsecindent{\divisionindent}          % Note: If you change \setsecnumdepth above, you 
-\setsecheadstyle{\divisionfont}         %   will need to set the indent for all lower 
-\setaftersecskip{\divisionafterskip}    %   levels to '0pt'; otherwise, they will be 
+\setsecindent{\divisionindent}          % Note: If you change \setsecnumdepth above, you
+\setsecheadstyle{\divisionfont}         %   will need to set the indent for all lower
+\setaftersecskip{\divisionafterskip}    %   levels to '0pt'; otherwise, they will be
                                         %   preceded by unnecessary space
 \setbeforesubsecskip{\divisionbeforeskip}
 \setsubsecindent{\divisionindent}
@@ -296,12 +296,12 @@
 % Paragraph formatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\sloppybottom                          % Reduce the chances of widows
-\raggedbottom                           % Loosens vertical spacing requirements, so 
-                                        %   \sloppybottom doesn't make pages look bad; 
+\raggedbottom                           % Loosens vertical spacing requirements, so
+                                        %   \sloppybottom doesn't make pages look bad;
                                         %   it also prevents large gaps in the middle of
                                         %   pages and pushes them to the bottom of pages
-\indentafterchapter                     % Overrides the default which is not to indent 
-                                        %   the first paragraph in a chapter, but it 
+\indentafterchapter                     % Overrides the default which is not to indent
+                                        %   the first paragraph in a chapter, but it
                                         %   looks odd in some places to not indent
                                         %   paragraphs
 
@@ -310,16 +310,16 @@
   {Table of Contents}%                  %   Formatted as chapter headings by default, so
 \renewcommand{\listtablename}%          %   no additional heading formatting is needed
   {List of Tables}
-\renewcommand{\listfigurename}% 
+\renewcommand{\listfigurename}%
   {List of Figures}
 
 %%% Depth %%%
 \settocdepth{subparagraph}              % Include 5 levels deep (all levels) in TOC
 
 %%% Fonts %%%
-\makeatletter% 
+\makeatletter%
 \patchcmd{\l@part}%                     % Patch the command that writes part-level entries
-    {\cftpartfont {#1}}%                %   to the table of contents, so they are in 
+    {\cftpartfont {#1}}%                %   to the table of contents, so they are in
     {\normalfont \texorpdfstring{%      %   'normalfont' and uppercase
       \uppercase{#1}}{{#1}} }%
     {\typeout{Success: Patch %
@@ -327,14 +327,14 @@
       part-level headings in the %
       table of contents.}}%
     {\typeout{Fail: Patch %
-      'l@part' to uppercase % 
+      'l@part' to uppercase %
       part-level headings in the %
       table of contents.}}%
 \makeatother%
 
-\makeatletter% 
-\patchcmd{\l@chapapp}%                  % Patch the command that writes chapter-level 
-    {\cftchapterfont {#1}}%             %   entries to the table of contents, so they are 
+\makeatletter%
+\patchcmd{\l@chapapp}%                  % Patch the command that writes chapter-level
+    {\cftchapterfont {#1}}%             %   entries to the table of contents, so they are
     {\normalfont \texorpdfstring{%      %   in 'normalfont' and uppercase
       \uppercase{#1}}{{#1}} }%
     {\typeout{Success: Patch %
@@ -347,28 +347,28 @@
       table of contents.}}%
 \makeatother%
 
-% If not using 'hyperref', use the following commands to adjust 'part' and 'chapter' 
+% If not using 'hyperref', use the following commands to adjust 'part' and 'chapter'
 %   level headings in the TOC
 %\renewcommand*{\cftpartfont}%         % Uppercase 'part' and 'chapter' headings
-%  {\normalfont\MakeTextUppercase}     % Note: Sending \MakeTextUppercase to the TOC 
+%  {\normalfont\MakeTextUppercase}     % Note: Sending \MakeTextUppercase to the TOC
 %\renewcommand*{\cftchapterfont}%      %   conflicts with hyperref and breaks it!
-%  {\normalfont\MakeTextUppercase}%    
+%  {\normalfont\MakeTextUppercase}%
 
-\usepackage{titlecaps}                  % Set up headline style for captions in the 
+\usepackage{titlecaps}                  % Set up headline style for captions in the
                                         %   lists of tables and figures
-                                        % Note: ASU style guide does not provide 
-                                        %   comprehensive guidelines for headlines, so 
+                                        % Note: ASU style guide does not provide
+                                        %   comprehensive guidelines for headlines, so
                                         %   Chicago style for headline style is used
-                                        % Note: Last word in title is not explicitly 
+                                        % Note: Last word in title is not explicitly
                                         %   capitalized; in general, these settings are
-                                        %   broadly correct, but captions should be 
+                                        %   broadly correct, but captions should be
                                         %   reviewed to ensure they are being capitalized
                                         %   properly
 \Resetlcwords
 \Addlcwords{a an the}                   % Leave articles lowercase
 \Addlcwords{and but for or nor}         % Leave conjunctions lowercase
 \Addlcwords{aboard about above across % % Leave all prepositions lowercase
-  after against along amid among anti % %   (This is a [non-exhaustive] list of common 
+  after against along amid among anti % %   (This is a [non-exhaustive] list of common
   around as at before behind below %    %   one-word prepositions)
   beneath beside besides between %
   beyond but by concerning considering %
@@ -381,8 +381,8 @@
   underneath unlike until up upon %
   versus vs via with within without}
 \Addlcwords{ according\space{to} %      % Leave two-word conjunctions lowercase
-  ahead\space{of} apart\space{from} %   %   (This is a [non-exhaustive] list of common 
-  as\space{for} as\space{of} %          %   two-word prepositions.) 
+  ahead\space{of} apart\space{from} %   %   (This is a [non-exhaustive] list of common
+  as\space{for} as\space{of} %          %   two-word prepositions.)
   as\space{per} as\space{regards} %
   aside\space{from} astern\space{of} %
   back\space{to} because\space{of} %
@@ -399,14 +399,14 @@
   regardless\space{of} right\space{of} %
   subsequent\space{to} such\space{as} %
   thanks\space{to} that\space{of} %
-  up\space{to}} 
-  
+  up\space{to}}
+
 \renewcommand{\cfttableaftersnumb}%     % Put table captions in List of Tables in title
   {\titlecap}%                          %   case
 \renewcommand{\cftfigureaftersnumb}%    % Put table captions in List of Figures in title
   {\titlecap}%                          %   case
 
-\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside 
+\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
   {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
 }%                                      % Note: Necessary due to the 'titlecaps' package
                                         %   which modifies contents of captions
@@ -432,7 +432,7 @@
 \renewcommand*{\cfttablepagefont}%
   {\normalfont}
 
-\cftpagenumbersoff{part}                % Turn off page numbers for 'part's, which are 
+\cftpagenumbersoff{part}                % Turn off page numbers for 'part's, which are
                                         %   actually serving as headings within the TOC
 
 %%% Vertical Space %%%
@@ -446,8 +446,8 @@
 \setlength{\cftbeforefigureskip}{0pt}
 \setlength{\cftbeforetableskip}{0pt}
 
-\renewcommand{\insertchapterspace}{%    % By default, extra vertical space (10pt) is 
-  \addtocontents{lof}%                  %   inserted between tables and figures from 
+\renewcommand{\insertchapterspace}{%    % By default, extra vertical space (10pt) is
+  \addtocontents{lof}%                  %   inserted between tables and figures from
     {\protect\addvspace{0pt}}%          %   different chapters; remove this extra space.
   \addtocontents{lot}%
     {\protect\addvspace{0pt}}%
@@ -497,10 +497,10 @@
 \setlength{\cftsubparagraphnumwidth}%
   {0.85\cftsubparagraphnumwidth}
 \setlength{\cftfigurenumwidth}%         % Figure has the same 'level' as 'chapter' in the
-  {\cftchapternumwidth}                 %   figure list, so make the number spacing the 
+  {\cftchapternumwidth}                 %   figure list, so make the number spacing the
                                         %   same as for chapters
 \setlength{\cfttablenumwidth}%          % Table has the same 'level' as 'chapter' in the
-  {\cftchapternumwidth}                 %   table list, so make the number spacing the 
+  {\cftchapternumwidth}                 %   table list, so make the number spacing the
                                         %   same as for chapters
 
 %%% Leaders/dots %%%
@@ -523,26 +523,26 @@
   \makeoddhead{ASUtoc}%
     {\leftmark}{}{Page}
 
-\copypagestyle{ASUtocFirst}{ASU}%       % Custom page headers for first page of TOC 
+\copypagestyle{ASUtocFirst}{ASU}%       % Custom page headers for first page of TOC
   \makeevenhead{ASUtocFirst}%           %    (print out the title)
     {}%
     {\printchaptertitle{\contentsname}}%
-    {} 
+    {}
   \makeoddhead{ASUtocFirst}%
     {}%
     {\printchaptertitle{\contentsname}}%
     {}
 
-\renewcommand{\tocheadstart}{}%         % Usually content list titles are printed like 
-                                        %   chapter headings; empty that formatting 
+\renewcommand{\tocheadstart}{}%         % Usually content list titles are printed like
+                                        %   chapter headings; empty that formatting
 
-\renewcommand{\printtoctitle}[1]{}%     % Don't print TOC title using default method; 
+\renewcommand{\printtoctitle}[1]{}%     % Don't print TOC title using default method;
                                         %   it will be output in the header
 
 \renewcommand{\aftertoctitle}{%         % On the first page of the TOC, print out the
-  \thispagestyle{ASUtocFirst}%          %   TOC title using a custom page style and print 
+  \thispagestyle{ASUtocFirst}%          %   TOC title using a custom page style and print
   \hfill Page\par%                      %   the heading for the page below in the regular
-  }%                                    %   textbox 
+  }%                                    %   textbox
                                         % Note: Need '\par' before lists; see here: https://tex.stackexchange.com/questions/49882/yet-another-perhaps-a-missing-item-error
 
 % List of Tables (LOT)
@@ -550,24 +550,24 @@
   \makeevenhead{ASUlot}{Table}{}{Page}
   \makeoddhead{ASUlot}{Table}{}{Page}
 
-\copypagestyle{ASUlotFirst}{ASU}%       % Custom page headers for first page of list of  
+\copypagestyle{ASUlotFirst}{ASU}%       % Custom page headers for first page of list of
   \makeevenhead{ASUlotFirst}%           %   tables (print out the title)
     {}%
     {\printchaptertitle{\listtablename}}%
-    {} 
+    {}
   \makeoddhead{ASUlotFirst}%
     {}%
     {\printchaptertitle{\listtablename}}%
     {}
 
-\renewcommand{\lotheadstart}{}%         % Usually content list titles are printed like 
-                                        %   chapter headings; empty that formatting; 
+\renewcommand{\lotheadstart}{}%         % Usually content list titles are printed like
+                                        %   chapter headings; empty that formatting;
 
-\renewcommand{\printlottitle}[1]{}%     % Don't print LOT title using default method; 
+\renewcommand{\printlottitle}[1]{}%     % Don't print LOT title using default method;
                                         %   it will be output in the header
 
 \renewcommand{\afterlottitle}{%         % On the first page of the list of tables, print
-  \thispagestyle{ASUlotFirst}%          %   out the title using a custom page style and 
+  \thispagestyle{ASUlotFirst}%          %   out the title using a custom page style and
   Table\hfill Page\par}%                %   print heading below in regular textbox
 
 % List of Figures (LOF)
@@ -575,40 +575,40 @@
   \makeevenhead{ASUlof}{Figure}{}{Page}
   \makeoddhead{ASUlof}{Figure}{}{Page}
 
-\copypagestyle{ASUlofFirst}{ASU}%       % Custom page headers for first page of list of  
+\copypagestyle{ASUlofFirst}{ASU}%       % Custom page headers for first page of list of
   \makeevenhead{ASUlofFirst}%           %   figures (print out the title)
     {}%
     {\printchaptertitle{\listfigurename}}%
-    {} 
+    {}
   \makeoddhead{ASUlofFirst}%
     {}%
     {\printchaptertitle{\listfigurename}}%
-    {}  
+    {}
 
-\renewcommand{\lofheadstart}{}%         % Usually content list titles are printed like 
-                                        %   chapter headings; empty that formatting 
+\renewcommand{\lofheadstart}{}%         % Usually content list titles are printed like
+                                        %   chapter headings; empty that formatting
 
-\renewcommand{\printloftitle}[1]{}%     % Don't print LOF title using default method; 
+\renewcommand{\printloftitle}[1]{}%     % Don't print LOF title using default method;
                                         %   it will be output in the header
 
 \renewcommand{\afterloftitle}{%         % On the first page of the list of figures, print
-  \thispagestyle{ASUlofFirst}%          %   out the title using a custom page style and 
+  \thispagestyle{ASUlofFirst}%          %   out the title using a custom page style and
   Figure\hfill Page\par}                %   print heading below in regular textbox
 
 %%% Page layout (dimensions) for Contents Lists
-\newlength{\verticalpush}               % Set up to change page dimensions for the table 
+\newlength{\verticalpush}               % Set up to change page dimensions for the table
                                         %   of contents
                                         % Push everything down so all the content is still
-                                        %   1in from the top of the page, including the  
+                                        %   1in from the top of the page, including the
                                         %   header, so the header is available for titles
                                         %   on the first page of contents lists and then
-                                        %   the headings on subsequent pages 
-\setlength{\verticalpush}%              % Calculate difference between \headdrop and the 
-  {1.0in - \headdrop}                   %   total upper margin (1in), so you can push 
+                                        %   the headings on subsequent pages
+\setlength{\verticalpush}%              % Calculate difference between \headdrop and the
+  {1.0in - \headdrop}                   %   total upper margin (1in), so you can push
                                         %   the top of the header down into the textbox
 
 \newcommand{\contentslistsetup}{%       % Set up for contents lists
-  \changepage%                          % Adjustment to page dimensions: 
+  \changepage%                          % Adjustment to page dimensions:
     {-\baselineskip}%                   %   text height
     {}%                                 %   text width
     {}%                                 %   even-side margin
@@ -625,21 +625,21 @@
     {-\verticalpush}{}{}{\verticalpush-\baselineskip}%
 }
 
-% Content lists can also be output directly. If the following command were used, all the 
-%   headings would have to be output manually (i.e., can't rely on any memoir macros for 
-%   formatting or setting in contents lists headings and lists). It would be best to 
-%   create a custom macro, such as '\customtoc', to output headings and content lists 
-%   following the style guide. 
+% Content lists can also be output directly. If the following command were used, all the
+%   headings would have to be output manually (i.e., can't rely on any memoir macros for
+%   formatting or setting in contents lists headings and lists). It would be best to
+%   create a custom macro, such as '\customtoc', to output headings and content lists
+%   following the style guide.
 %
 % \makeatletter
 %   \@starttoc{toc}
 % \makeatother
 
-% These pages partly explain why it's difficult to use 'afterpage' to change page layout 
-%   settings (essentially, it's because everything inside \afterpage has a local scope). 
-%   If it were possible to use 'afterpage' in that way, the content lists would  be 
-%   easier to format. A new page layout could be called after the first page of each 
-%   content  list. Instead, use page marks to get the layout required by the style guide. 
+% These pages partly explain why it's difficult to use 'afterpage' to change page layout
+%   settings (essentially, it's because everything inside \afterpage has a local scope).
+%   If it were possible to use 'afterpage' in that way, the content lists would  be
+%   easier to format. A new page layout could be called after the first page of each
+%   content  list. Instead, use page marks to get the layout required by the style guide.
 % https://tex.stackexchange.com/questions/97126/attempts-to-manually-change-linewidth-ignored-by-latex
 % https://tex.stackexchange.com/questions/85729/page-styles-only-work-for-thispagestyle-under-afterpage
 
@@ -658,7 +658,7 @@
 
   \makepagenote                         % Required in preamble if using endnotes
   \continuousnotenums                   % Numbering does *not* reset after each chapter
-  \renewcommand*{\pagenotesubhead}[3]{} % No subheads inside note list (default is to 
+  \renewcommand*{\pagenotesubhead}[3]{} % No subheads inside note list (default is to
                                         %   divide them by chapter)
   \renewcommand*{\notenuminnotes}[1]%   % Remove extra space between note number and note
     {\normalfont #1.}                   %   text
@@ -669,79 +669,79 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\bibfilename}{sample_library}%<Enter the name of the *.bib file containing the 
+\newcommand{\bibfilename}{sample_library}%<Enter the name of the *.bib file containing the
                                         %   reference information for sources cited in
-                                        %   the text. God help you if you're doing 
-                                        %   citations manually. 
+                                        %   the text. God help you if you're doing
+                                        %   citations manually.
 \newcommand{\bibheading}{References}    %<Enter the heading for the references section:
                                         %   'References', 'Works Cited', or 'Bibliography'
 
-\providetoggle{usebiblatex}             % True = a biblatex package is being used; 
+\providetoggle{usebiblatex}             % True = a biblatex package is being used;
                                         %   False = 'natbib' is being used
-\settoggle{usebiblatex}{true}           %~Set to 'false' to use 'natbib' intead of 
+\settoggle{usebiblatex}{true}           %~Set to 'false' to use 'natbib' intead of
                                         %   biblatex; I strongly recommend using biblatex
-                                        %   because natbib is rather old and will break 
-                                        %   for innocuous things like underscores in URLs 
+                                        %   because natbib is rather old and will break
+                                        %   for innocuous things like underscores in URLs
 \iftoggle{usebiblatex}{%                % Settings for citation package
-%                                       % Settings for 'biblatex' or a version of 
+%                                       % Settings for 'biblatex' or a version of
 %                                       %   'biblatex'
-  \usepackage[authordate,%                 
+  \usepackage[authordate,%
               backend=biber,%           % Recommend to use 'biber' instead of 'bibtex'
               doi=only,%                % Avoid printing URLs
               isbn=false]%              % Don't print ISBN numbers
-              {biblatex-chicago}        %~Other possibilities include: 'biblatex', 
+              {biblatex-chicago}        %~Other possibilities include: 'biblatex',
                                         %   'biblatex-apa', and 'biblatex-mla'
   \bibliography{\bibfilename}
-  \setlength{\bibitemsep}%              % Set vertical distance between 
-    {0.5\baselineskip}%                 %   bibliography entries 
+  \setlength{\bibitemsep}%              % Set vertical distance between
+    {0.5\baselineskip}%                 %   bibliography entries
   \setcounter{biburlnumpenalty}{9000}   % Break URLs in bibliography across lines
   \setcounter{biburlucpenalty}{9000}
   \setcounter{biburllcpenalty}{9000}
 
-  \usepackage[style=american,%          % Settings for quotation marks; load after 
-    english=american]{csquotes}%        %   'inputenc'; only use with biblatex; throws 
+  \usepackage[style=american,%          % Settings for quotation marks; load after
+    english=american]{csquotes}%        %   'inputenc'; only use with biblatex; throws
   \MakeOuterQuote{"}%                   %   error when used with natbib
 }{%                                     % Settings for 'natbib'
   \usepackage{natbib}%
-  \newcommand{\natbibstyle}{asudis}%    %~Enter the name of the *.bst file to use to 
-                                        %   format citations with natbib. Default is 
+  \newcommand{\natbibstyle}{asudis}%    %~Enter the name of the *.bst file to use to
+                                        %   format citations with natbib. Default is
                                         %   'asudis'. I do not know where 'asudis' came
                                         %   from, but apparently it formats citations
-                                        %   correctly because it was included with the 
-                                        %   previous LaTeX template.   
+                                        %   correctly because it was included with the
+                                        %   previous LaTeX template.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tables and figures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captiondelim{. }                       %~Use period (.) after caption number instead of 
-                                        %   colon (:). Change according to style guide. 
-\captionstyle[\raggedright]%            % Set justifcation for [one line captions] 
+\captiondelim{. }                       %~Use period (.) after caption number instead of
+                                        %   colon (:). Change according to style guide.
+\captionstyle[\raggedright]%            % Set justifcation for [one line captions]
   {\raggedright}                        %   and {multiple line captions}
 \setlength{\belowcaptionskip}{0pt}      % Bring caption down closer to figure/table
-\makeatletter                           % Consecutive numbering throughout 
+\makeatletter                           % Consecutive numbering throughout
   \counterwithout{figure}{chapter}      %   (including back matter)
-  \counterwithout{table}{chapter} 
-  \renewcommand\@memfront@floats{} 
-  \renewcommand\@memmain@floats{} 
-  \renewcommand\@memback@floats{} 
+  \counterwithout{table}{chapter}
+  \renewcommand\@memfront@floats{}
+  \renewcommand\@memmain@floats{}
+  \renewcommand\@memback@floats{}
 \makeatletter
 
 %%% Tables %%%
 %
-% Note: 'memoir' natively supports commands from the following table-related packages: 
+% Note: 'memoir' natively supports commands from the following table-related packages:
 %   tabularx, ccaption, booktabs.
-% Everyone has particular ideas about how tables should look, so you may need to 
-%   load additional packages and modify the code below to get tables (and figures) to 
-%   look the way you want them to. 
+% Everyone has particular ideas about how tables should look, so you may need to
+%   load additional packages and modify the code below to get tables (and figures) to
+%   look the way you want them to.
 \setfloatadjustment{table}{\raggedright}% Left justify material inside table floats
-\usepackage{tabu}                       % 'tabu' is an excellent table package; it can 
-                                        %   automatically size column widths and has a 
+\usepackage{tabu}                       % 'tabu' is an excellent table package; it can
+                                        %   automatically size column widths and has a
                                         %   lot of customizations that other packages do
-                                        %   not. It also has a 'longtabu' environment that 
+                                        %   not. It also has a 'longtabu' environment that
                                         %   emulates 'longtable' with additional features
-                                        %   from the 'tabu' package. If you don't want 
-                                        %   to use it, you can comment this line out. 
+                                        %   from the 'tabu' package. If you don't want
+                                        %   to use it, you can comment this line out.
 \BeforeBeginEnvironment{table}%         % Single space inside table environment
   {\SingleSpacing}
 \AfterEndEnvironment{table}
@@ -756,20 +756,20 @@
   {\DoubleSpacing}
 
 \makeatletter                           % Define custom macro called '\maxwidth{}' that
-  \def\maxwidth#1{%                     %   allows you to specify the maximum width of an 
+  \def\maxwidth#1{%                     %   allows you to specify the maximum width of an
     \ifdim%                             %   imported image. See below for an example.
-      \Gin@nat@width>#1 #1%             %   
+      \Gin@nat@width>#1 #1%             %
     \else%                              % Source: http://tex.stackexchange.com/questions/86350/includegraphics-maximum-width
       \Gin@nat@width%
     \fi}
 \makeatother
 %
-% Example \maxwidth: 
+% Example \maxwidth:
 %
 %   \includegraphics[width=\maxwidth]{\textwidth}]{image.pdf}
-% 
-% Note: This will keep an image inside the horizontal margins assuming the image starts 
-%   on the right margin (i.e., no horizontal space before the image). 
+%
+% Note: This will keep an image inside the horizontal margins assuming the image starts
+%   on the right margin (i.e., no horizontal space before the image).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hyperref settings
@@ -777,10 +777,10 @@
 
 %%% URL Settings %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[breaklinks=true]{hyperref}  % 'hyperref' should be loaded at the end of the 
-                                        %   preamble; Note: the uppercasing commands used 
-                                        %   throughout the preamble can conflict with it, 
-                                        %   especially when non-standard fonts or 
+\usepackage[breaklinks=true]{hyperref}  % 'hyperref' should be loaded at the end of the
+                                        %   preamble; Note: the uppercasing commands used
+                                        %   throughout the preamble can conflict with it,
+                                        %   especially when non-standard fonts or
                                         %   different file encodings are used
 \urlstyle{same}                         % Set URLs in the same font as regular text
 
@@ -792,16 +792,16 @@
 \vfuzz \hfuzz
 
 %%% Create metadata strings
-\usepackage{hyperxmp}                   % For metadata 
+\usepackage{hyperxmp}                   % For metadata
 \renewcommand*{\do}[1]{#1\ }%           % Build title string to output to pdf document
-\newcommand*{\onelinetitle}{%        
+\newcommand*{\onelinetitle}{%
   \dolistloop{\titlelines}%
 }
 \edef\theonelinetitle%
   {\onelinetitle}
 
 \renewcommand*{\do}[1]{{#1}\ }%          % Build keyword string to output to pdf document
-\newcommand*{\pdfkeywordsstring}{%        
+\newcommand*{\pdfkeywordsstring}{%
   \dolistloop{\keywords}%
 }
 \edef\thepdfkeywordsstring%
@@ -827,14 +827,14 @@
 \edef\pdfsummary{%                      % Build pdf summary
   A \documentname Presented in\space
   Partial Fulfillment of the\space
-  Requirements for a \degreename\space 
+  Requirements for a \degreename\space
   from Arizona State University}
 
 %%% Enter metadata and other settings
 \hypersetup{                            % Set pdf metadata
   pdftitle={\theonelinetitle},          % Title
   pdfauthor={\Author},                  % Author
-  pdfcreator={\pdfcreator},             % Enter the TeX writer for good documentation 
+  pdfcreator={\pdfcreator},             % Enter the TeX writer for good documentation
  %pdfproducer={},                       % Let 'pdfproducer' be filled automatically
   pdfsubject={\pdfsummary},             % Subject of the document
   pdfkeywords=\thepdfkeywordsstring,    % List of keywords
@@ -848,9 +848,9 @@
 \fi
 \ifpdf                                  % Copyright message; probably only works in pdfTeX
   \hypersetup{
-    pdfcopyright={\pdfcopyrightstring},   
+    pdfcopyright={\pdfcopyrightstring},
     pdfinfo={%
-      Copyright=\pdfcopyrightstring%      
+      Copyright=\pdfcopyrightstring%
     }%
   }
 \fi
@@ -862,7 +862,7 @@
   {bookmark}
 \bookmark[page=1,rellevel=0,%           % Create bookmark of title page at root level
   keeplevel=true]{Title Page}
-\preto{\tableofcontents}{%              % Create bookmark for TOC 
+\preto{\tableofcontents}{%              % Create bookmark for TOC
   \hypertarget{tocpage}{}%
   \bookmark[dest=tocpage,rellevel=0,%
     keeplevel=true]{\contentsname}%
@@ -873,7 +873,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\copyrightpageASU}{%          % Create copyright page
   \thispagestyle{empty}
-  \titlepagesetup 
+  \titlepagesetup
   ~\\ \vfill
     \begin{center}
       \copyright\gradyear\space%
@@ -881,7 +881,7 @@
       All Rights Reserved%
     \end{center}%
   \clearpage%
-  \closetitlepagesetup 
+  \closetitlepagesetup
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -915,7 +915,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\copyrightpageASU                       %~If you don't want to have a copyright page, 
+\copyrightpageASU                       %~If you don't want to have a copyright page,
                                         %   comment out this line
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -927,21 +927,21 @@
 
 \chapter*{Abstract}                     % Abstract is required
 \input{sample_abstract}                 %<Enter the name of the .tex file containing your
-                                        %   your abstract or omit this line and type in 
-                                        %   your abstract here. 
+                                        %   your abstract or omit this line and type in
+                                        %   your abstract here.
 
 \chapter*{Dedication}                   %~Dedication is optional
-%\clearpage                             %~If you don't wish to display the heading 
-                                        %   'Dedication', comment out the previous line 
+%\clearpage                             %~If you don't wish to display the heading
+                                        %   'Dedication', comment out the previous line
                                         %   and use this one instead.
 \input{sample_dedication}               %<Enter the name of the .tex file containing your
-                                        %   your dedication or omit this line and type in 
-                                        %   your dedication here. 
+                                        %   your dedication or omit this line and type in
+                                        %   your dedication here.
 
 \chapter*{Acknowledgments}              %~Acknowledgments are optional
 \input{sample_acknowledgments}          %<Enter the name of the .tex file containing your
                                         %   acknowledgments or omit this line and type in
-                                        %   your acknowledgments here. 
+                                        %   your acknowledgments here.
 
 \iftoggle{usemicrotype}                 % If 'microtype' is in use, turn off protrusion
   {\microtypesetup{protrusion=false}}%  %   for TOC
@@ -951,27 +951,27 @@
 
 \pagestyle{ASUtoc}
 \tableofcontents*                       % Starred version leaves TOC heading out of TOC
-\addtocontents{toc}%                    % List of ... needs to be on left margin, but 
+\addtocontents{toc}%                    % List of ... needs to be on left margin, but
   {\setlength{\cftchapterindent}%       %   they inherit 'chapter' formatting, so override
     {0em}%
-  } 
+  }
 
 \clearpage
 \pagestyle{ASUlot}
-\listoftables                           % List of Tables should appear in TOC, so use 
+\listoftables                           % List of Tables should appear in TOC, so use
                                         %   unstarred version of \listoftables
 \clearpage
 \pagestyle{ASUlof}
-\listoffigures                          % List of Figures should appear in TOC, so use 
+\listoffigures                          % List of Figures should appear in TOC, so use
                                         %   unstarred version of \listoffigures
 
-\phantomsection                         % \phantomsection is needed before using 
+\phantomsection                         % \phantomsection is needed before using
                                         %   \addtocontents when it contains certain macros
                                         %   when also using 'hyperref' package
 \addtocontents{toc}%                    % Undo manual override above for chapter indent,
   {\setlength{\cftchapterindent}%       %   so actual chapters in the TOC are indented
-    {\levelindentincrement}%            %   correctly 
-  } 
+    {\levelindentincrement}%            %   correctly
+  }
 \setlength{\afterchapskip}%             % Set vertical space between chapter title and
   {\baselineskip}                       %   first paragraph; equivalent to two line breaks
 
@@ -981,23 +981,23 @@
 \addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
   {\protect\markboth{CHAPTER}{Page}}    %   the "CHAPTER" heading
 
-\iftoggle{usemicrotype}                 % If 'microtype' is in use, turn protrusion back 
+\iftoggle{usemicrotype}                 % If 'microtype' is in use, turn protrusion back
   {\microtypesetup{protrusion=true}}%   %   on
   {}
 
-\clearpage                              % Note: All these changes have to be above a 
+\clearpage                              % Note: All these changes have to be above a
                                         %   a '\clearpage' before '\mainmatter'
 
-\pagestyle{ASU}                         % Switch back to regular page style for remainder  
+\pagestyle{ASU}                         % Switch back to regular page style for remainder
                                         %   of the document
 \closecontentslistsetup                 % Undo page layout for contents lists
 
 %\chapter{Definitions}                   %~OTHER LISTS (optional)
-%\input{definitions}                     %<Enter the name of the .tex file or omit this  
+%\input{definitions}                     %<Enter the name of the .tex file or omit this
                                         %   line and type in here.
 
 %\chapter{Preface}                       %~PREFACE (optional, less than 10 pages)
-%\input{preface}                         %<Enter the name of the .tex file or omit this  
+%\input{preface}                         %<Enter the name of the .tex file or omit this
                                         %   line and type in here.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1006,8 +1006,8 @@
 \mainmatter
 %\include{chapter1}                     %<Insert your chapters here; I recommend to use
 %\include{chapter2}                     %   \include rather than \input for chapters
-%\include{chapter3}% etc. 
-                                        % Heading commands (in descending order): 
+%\include{chapter3}% etc.
+                                        % Heading commands (in descending order):
                                         % \chapter
                                         % \section
                                         % \subsection
@@ -1017,35 +1017,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Back matter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\SingleSpacing                          % Back matter should be single spaced 
+\SingleSpacing                          % Back matter should be single spaced
 
 \edef\defaulttolerance{\the\tolerance}
 \tolerance 500                         % Increase tolerance to prevent material extending into margins
-\hbadness 500  
+\hbadness 500
 
 \iftoggle{useendnotes}{%                % If you're using endnotes, output them here
   \setsecnumdepth{none}                 % No section numbering in end notes
-  \printpagenotes                       
+  \printpagenotes
   \setsecnumdepth{all}%                 % Turn section numbering back on after printing
 }{}
 
-\chapter*{\bibheading}                  % In the running text, use a chapter-level heading 
-                                        % for the bibliography section 
-\phantomsection                         
-\addcontentsline{toc}{chapter}{%        % In the TOC, add a custom chapter-level heading 
-  \hspace{-\cftchapterindent}%          % that will be flush against the left margin 
+\chapter*{\bibheading}                  % In the running text, use a chapter-level heading
+                                        % for the bibliography section
+\phantomsection
+\addcontentsline{toc}{chapter}{%        % In the TOC, add a custom chapter-level heading
+  \hspace{-\cftchapterindent}%          % that will be flush against the left margin
   \bibheading%
-}    
+}
 %\phantomsection
 %\addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
-%  {\protect\markboth{\bibheading}{Page}}%   the bibliography heading (unlikely since 
-%                                        %   the appendices follow quickly) 
+%  {\protect\markboth{\bibheading}{Page}}%   the bibliography heading (unlikely since
+%                                        %   the appendices follow quickly)
 \iftoggle{usebiblatex}{%                % Output the bibliography
-  \printbibliography[heading=none]      % Using a 'biblatex' package; do not let 
-                                        %   'biblatex' output a heading 
-}{%                                     
-  \renewcommand\bibsection{}            % Do not let 'natbib' output a heading 
-  \bibliographystyle{\natbibstyle}      % Using 'natbib' to print bibliography 
+  \printbibliography[heading=none]      % Using a 'biblatex' package; do not let
+                                        %   'biblatex' output a heading
+}{%
+  \renewcommand\bibsection{}            % Do not let 'natbib' output a heading
+  \bibliographystyle{\natbibstyle}      % Using 'natbib' to print bibliography
   \bibliography{\bibfilename}
 }
 
@@ -1053,12 +1053,12 @@
                                         % Appendices are considered 'mainmatter' in this
                                         %   documentclass
 \tolerance \defaulttolerance            % Set tolerance back to default
-\hbadness \defaulttolerance  
+\hbadness \defaulttolerance
 
 \addtocontents{toc}{\protect%           % Only include appendix title in table of contents
   \setcounter{tocdepth}{0}}%            %   and omit sub-headings
 \renewcommand*{\chapnamefont}%          % Reset font for 'Appendix' in chapter titles
-    {\normalfont\MakeTextUppercase}                                        
+    {\normalfont\MakeTextUppercase}
 \makeatletter                           % Clear page after printing appendix title
   \renewcommand{\memendofchapterhook}%
   {%
@@ -1068,29 +1068,29 @@
   }
 \makeatother
 
-\phantomsection                         % Need '\phantomsection' to place hyperref 
+\phantomsection                         % Need '\phantomsection' to place hyperref
                                         %   bookmark more accurately
-\addcontentsline{toc}{part}{Appendix}   %~Add "Appendix" to TOC here; comment out this 
+\addcontentsline{toc}{part}{Appendix}   %~Add "Appendix" to TOC here; comment out this
                                         %   line if you're not including appendices
 
-%\phantomsection                        %!This is the one part of the template that I 
-%\addtocontents{toc}%                   %   could not get to work properly. After you 
-%  {\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC, 
-                                        %   subsequent TOC pages should use "APPENDIX in 
-                                        %   the header instead of "CHAPTER"; however, 
-                                        %   this code will make "APPENDIX" appear on the 
-                                        %   the same page that the *first* appendix 
-                                        %   appears on. This problem won't affect most 
-                                        %   people, but if it affects you, uncomment 
-                                        %   these lines and move them below where 
+%\phantomsection                        %!This is the one part of the template that I
+%\addtocontents{toc}%                   %   could not get to work properly. After you
+%  {\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC,
+                                        %   subsequent TOC pages should use "APPENDIX in
+                                        %   the header instead of "CHAPTER"; however,
+                                        %   this code will make "APPENDIX" appear on the
+                                        %   the same page that the *first* appendix
+                                        %   appears on. This problem won't affect most
+                                        %   people, but if it affects you, uncomment
+                                        %   these lines and move them below where
                                         %   the appendices are listed. Keep moving these
                                         %   lines down and checking the output until
-                                        %   the TOC headers appear correctly 
-                                        
+                                        %   the TOC headers appear correctly
+
 %\include{appendix1}                     %~Insert your appendices here; I recommend to use
-%\include{appendix2}                     %   \include rather than \input for appendices. 
+%\include{appendix2}                     %   \include rather than \input for appendices.
 %\include{appendix3}% etc.               %   All heading commands are the same as above,
-                                         %   e.g., \chapter, \section, etc. 
+                                         %   e.g., \chapter, \section, etc.
 
 \backmatter                             % Start back matter according to documentclass
 \makeatletter                           % Do not clear page after printing title for
@@ -1103,6 +1103,6 @@
 %\chapter{Biographical Sketch}           %~Biographical Sketch is optional
 %\input{biography}                       %<Enter the name of the .tex file containing your
                                         %   biography or omit this line and type in
-                                        %   your biography here (1 paragraph) 
+                                        %   your biography here (1 paragraph)
 
 \end{document}

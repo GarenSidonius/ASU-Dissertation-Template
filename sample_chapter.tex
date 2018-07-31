@@ -1,63 +1,63 @@
 \chapter{This is a chapter-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\section{This is the first section-level heading} 
+\section{This is the first section-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\subsection{This is the first sub-section-level heading} 
+\subsection{This is the first sub-section-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\subsubsection{This is the first sub-sub-section-level heading} 
+\subsubsection{This is the first sub-sub-section-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\paragraph{This is the first paragraph-level heading} 
+\paragraph{This is the first paragraph-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\subparagraph{This is the first sub-paragraph-level heading} 
+\subparagraph{This is the first sub-paragraph-level heading}
 
-\lipsum[1] 
+\lipsum[1]
 
-\section{Citation examples} 
+\section{Citation examples}
 
-The contents of this section differ depending on the bibliography settings, specifically whether the `usebiblatex' toggle is set to `true' or `false'. 
+The contents of this section differ depending on the bibliography settings, specifically whether the `usebiblatex' toggle is set to `true' or `false'.
 \iftoggle{usebiblatex}{%
-  This sentence shows citation with biblatex \parencite{searchinger_world_2013}. 
-  This is another sentence showing citation with biblatex \parencite{pathak_rural_2007}. 
+  This sentence shows citation with biblatex \parencite{searchinger_world_2013}.
+  This is another sentence showing citation with biblatex \parencite{pathak_rural_2007}.
 }{%
-  This sentence shows citation with natbib \citep{pathak_rural_2007}. 
-  This is another sentence showing citation with natbib \citep{searchinger_world_2013}. 
+  This sentence shows citation with natbib \citep{pathak_rural_2007}.
+  This is another sentence showing citation with natbib \citep{searchinger_world_2013}.
 }
 
-\section{Footnote examples} 
+\section{Footnote examples}
 
-This is a sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
-This is another sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+This is a sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.}
+This is another sentence followed by a footnote.\footnote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.}
 
-\section{Block quote example} 
+\section{Block quote example}
 
-The following is a block quote: 
+The following is a block quote:
 
 \begin{quote}
 \lipsum[1-2]
 \end{quote}
 
-\section{Endnote examples} 
+\section{Endnote examples}
 
-Endnotes appear in a separate section after chapters and before the reference list. 
-This is a sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
-This is another sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.} 
+Endnotes appear in a separate section after chapters and before the reference list.
+This is a sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.}
+This is another sentence followed by a endnote.\pagenote{Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices biben- dum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.}
 And here is a really long endnote to show formatting across several pages.\pagenote{\expandafter\lipsum[1-6]}
 
-\section{Table example} 
+\section{Table example}
 
-See table \ref{table\arabic{tablecounter}} for an example of a table. 
-Place macros inside captions using \string\macrocapwrap. 
-See table \ref{table\arabic{tablecounter}} for a demonstration. 
+See table \ref{table\arabic{tablecounter}} for an example of a table.
+Place macros inside captions using \string\macrocapwrap.
+See table \ref{table\arabic{tablecounter}} for a demonstration.
 
 \begin{table}[h] % Table float
 \caption{Here is a table caption that is especially long to show what happens when it extends to more than one line in the table of contents}
@@ -85,22 +85,22 @@ Row3 & 7.0 & 8.0 \\ \hline
 \end{table}
 \refstepcounter{tablecounter}
 
-\section{Figure example} 
+\section{Figure example}
 
-See figure \ref{figure\arabic{figurecounter}} for an example of a figure. 
+See figure \ref{figure\arabic{figurecounter}} for an example of a figure.
 
 \begin{figure}
 \includegraphics[width=\maxwidth{\textwidth}]{antidorcas.jpg}
-\caption{Antidorcas marsupialis, male} 
+\caption{Antidorcas marsupialis, male}
 \label{figure\arabic{figurecounter}}
 \legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
 \legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
 \end{figure}
 \refstepcounter{figurecounter}
 \clearpage
-\section{Math examples} 
+\section{Math examples}
 
-This section contains some math-heavy text adapted from \iftoggle{usebiblatex}{\textcite{dwilkins1995}}{\citet{dwilkins1995}}. 
+This section contains some math-heavy text adapted from \iftoggle{usebiblatex}{\textcite{dwilkins1995}}{\citet{dwilkins1995}}.
 In non-relativistic wave mechanics, the wave function $\psi(\mathbf{r},t)$ of a particle satisfies the Schrödinger Wave Equation
 %
 \begin{equation}
@@ -133,7 +133,7 @@ and hence
 \begin{equation}
 \int \!\!\! \int \!\!\! \int_{\textbf{R}^3}
       \left| \psi(\mathbf{r},t) \right|^2\,dx\,dy\,dz = 1
-\end{equation} 
+\end{equation}
 %
 for all times~$t$. If we normalize the wave function in this
 way then, for any (measurable) subset~$V$ of $\textbf{R}^3$
@@ -142,10 +142,10 @@ and time~$t$,
 \begin{equation}
 \int \!\!\! \int \!\!\! \int_V
       \left| \psi(\mathbf{r},t) \right|^2\,dx\,dy\,dz
-\end{equation} 
+\end{equation}
 %
 represents the probability that the particle is to be found
-within the region~$V$ at time~$t$. 
+within the region~$V$ at time~$t$.
 
 \begin{table}[h] % Table float
 \caption{This caption has math characters that remain lowercase: \relax\macrocapwrap{$\psi(\mathbf{r},t)$} }
