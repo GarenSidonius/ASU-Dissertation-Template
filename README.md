@@ -79,7 +79,6 @@ Or use `latexmk` to process the sample file with `pdftex` by entering the follow
     latexmk -pdf dissertation_template_latex_sample.tex
 
 Both of these commands should produce a PDF called `dissertation_template_latex_sample.pdf`, which is the sample document.
-Click [here](https://www.sharelatex.com/github/repos/GarenSidonius/ASU-Dissertation-Template/builds/latest/output.pdf) to view the sample document built with `pdftex`.
 
 #### Step-by-step: Making your dissertation/thesis with the template
 
