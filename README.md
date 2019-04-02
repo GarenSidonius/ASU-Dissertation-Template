@@ -139,7 +139,9 @@ Pandoc is a great utility, and you can learn about it [here](http://johnmacfarla
 
 ## Contact
 
-Feel free to contact me with questions or suggestions: Robert Kutter (robert@kutterconsulting.com)
+The best way to get a response to any questions about the template or errors is to open a new issue in GitHub.
+This is the preferred way to ask questions because issues are public and available to other users who might have the same or similar questions.
+Otherwise, I can be contacted by email: Robert Kutter (robert@kutterconsulting.com)
 
 Find out more about me and my work here: <http://kutterconsulting.com>
 
