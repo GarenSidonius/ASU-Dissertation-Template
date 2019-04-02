@@ -1021,6 +1021,10 @@
 % Back matter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SingleSpacing                          % Back matter should be single spaced
+\AfterEndEnvironment{table}{\SingleSpacing} % Reset these environments
+\AfterEndEnvironment{figure}{\SingleSpacing}
+\AfterEndEnvironment{quote}{\SingleSpacing}
+\AfterEndEnvironment{quotation}{\SingleSpacing}
 
 \edef\defaulttolerance{\the\tolerance}
 \tolerance 500                          % Increase tolerance to prevent material extending into margins
