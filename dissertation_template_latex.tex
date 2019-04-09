@@ -907,6 +907,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\pagenumbering{Alph}                   % Set page numbering to a page numbering
+                                       %   style that is not used anywhere else
+                                       %   in the document. This is necessary
+                                       %   because the title and copyright
+                                       %   pages received numbers (even though)
+                                       %   they're hidden) and some automatic
+                                       %   reference packages (like glossary)
+                                       %   will make references to the title
+                                       %   or copyright page when there are
+                                       %   crossreferences on the first or
+                                       %   second page of a section that uses
+                                       %   the same numbering system as the
+                                       %   title and copyright pages. For
+                                       %   example, if page i contains a
+                                       %   glossary entry, the glossary would
+                                       %   contain an automatic reference that
+                                       %   skips to the title page instead of
+                                       %   page i.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
