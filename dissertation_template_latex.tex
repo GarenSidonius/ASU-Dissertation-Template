@@ -144,12 +144,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DoubleSpacing                          % True double spacing
 \BeforeBeginEnvironment{quote}          % Memoir leaves most special material
-  {\SingleSpacing}                      %   single spaced, but makes block quotes
+  {\par\SingleSpacing}                  %   single spaced, but makes block quotes
 \AfterEndEnvironment{quote}%            %   double-spaced; fix to follow ASU style guide
   {\vspace{-\baselineskip} %
   \DoubleSpacing}
 \BeforeBeginEnvironment{quotation}%
-  {\SingleSpacing}
+  {\par\SingleSpacing}
 \AfterEndEnvironment{quotation}%
   {\vspace{-\baselineskip} %
   \DoubleSpacing}
