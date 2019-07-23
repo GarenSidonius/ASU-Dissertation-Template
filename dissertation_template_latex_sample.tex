@@ -491,12 +491,98 @@
   {0.85\cftparagraphnumwidth}
 \setlength{\cftsubparagraphnumwidth}%
   {0.85\cftsubparagraphnumwidth}
-\setlength{\cftfigurenumwidth}%         % Figure has the same 'level' as 'chapter' in the
-  {\cftchapternumwidth}                 %   figure list, so make the number spacing the
-                                        %   same as for chapters
-\setlength{\cfttablenumwidth}%          % Table has the same 'level' as 'chapter' in the
-  {\cftchapternumwidth}                 %   table list, so make the number spacing the
-                                        %   same as for chapters
+
+% Calculate the indent to the first
+% character in table and figure
+% captions.
+% This is more complicated because the
+% document automatically considers
+% the total number of figures and
+% tables and increases the indent to
+% make room for longer numbers.
+\newcounter{totfigures}                 % Collect the total number of figures
+\newcounter{tottables}                  % Collect the total number of tables
+
+\providecommand\totfig{}                % Retrieve the total number of figures
+\providecommand\tottab{}                % Retrieve the total number of tables
+
+\makeatletter
+\AtEndDocument{%                        % Store the totals
+  \addtocounter{totfigures}{%
+    \value{figure}%
+  }%
+  \addtocounter{tottables}{%
+    \value{table}%
+  }%
+  \immediate\write\@mainaux{%
+    \string\gdef\string\totfig{%
+      \number\value{totfigures}%
+    }%
+    \string\gdef\string\tottab{%
+      \number\value{tottables}%
+    }%
+  }%
+}
+\makeatother
+
+% The calculation that appears inside
+% this block needs to be done as the
+% the document is written, not in the
+% preamble. `\pretocmd` makes this
+% calculation happen right before
+% `\listoffigures` is executed.
+\usepackage{calculator}
+\pretocmd{\listoffigures}{%
+  % Calculate the number of digits in
+  % the total number of figures
+  %
+  % Here is the algorithm:
+  %   Floor(Log10(\number)) + 1
+  \LOG[10]{\totfig}{\tempAfig}%
+  \FLOOR{\tempAfig}{\tempBfig}%
+  \ADD{\tempBfig}{1}{\digitsinfig}%     % Number of digits in number of figs
+  %
+  % Calculate space factor for figures
+  % The space factor is just one less
+  % than the number of digits, but it
+  % must be at least 0.
+  %
+  \SUBTRACT{\digitsinfig}{1}{\tempDfig}%
+  \MAX{\tempDfig}{0}{\tempEfig}%
+  \MULTIPLY{\tempEfig}{0.55}{%
+    \figspacefactor%                    % Space factor for figures in LOF
+  }%
+  % Apply the space factor for figures
+  \setlength{\cftfigurenumwidth}{%      % Figure has the same 'level' as
+    \cftchapternumwidth%                % 'chapter' in the figure list, so
+  }%                                    % make the number spacing the same as
+                                        % for chapters unless there are more
+  \addtolength{\cftfigurenumwidth}{%    % than 9 figures; in that case, add
+    \figspacefactor em%                 % extra space (as calculated in
+  }%                                    % `\figspacefactor`
+}{}{}
+
+% Same space calculation for tables
+\pretocmd{\listoftables}{%
+  % Calculate the number of digits in
+  % the total number of tables
+  \LOG[10]{\tottab}{\tempAtab}%
+  \FLOOR{\tempAtab}{\tempBtab}%
+  \ADD{\tempBtab}{1}{\digitsintab}%     % Number of digits in number of tabs
+  % Calculate space factor for tables
+  \SUBTRACT{\digitsintab}{1}{\tempDtab}%
+  \MAX{\tempDtab}{0}{\tempEtab}%
+  \MULTIPLY{\tempEtab}{0.55}{%
+    \tabspacefactor%                    % Space factor for tables in LOT
+  }%
+  % Apply the space factor for tables
+  \setlength{\cfttablenumwidth}{%
+    \cftchapternumwidth%
+  }%
+  \addtolength{\cfttablenumwidth}{%
+    \tabspacefactor em%
+  }%
+}{}{}
 
 %%% Leaders/dots %%%
 \renewcommand*{\cftdotsep}{1.7}         % Set distance between dots for all heading levels
