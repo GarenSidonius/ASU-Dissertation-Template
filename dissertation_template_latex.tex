@@ -971,6 +971,28 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Biographical Sketch
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Wrapper for entering a biographical
+% sketch. This command takes a single
+% argument, which is the text of the
+% biographical sketch. It is allowed
+% to use `\input` with an external
+% file containing the text of the
+% biographical sketch.
+\newcommand{\biographicalsketch}[1]{%
+  \chapter*{Biographical Sketch}%
+  \phantomsection%                      % Need for hyperref
+  \addcontentsline{toc}{chapter}{%      % Add a chapter-level heading for
+    \hspace{-\cftchapterindent}%        %  a biographical sketch to the ToC
+    Biographical Sketch%
+  }%
+
+  #1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sample settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \providetoggle{sample}                  % True = demonstration of template
@@ -1210,9 +1232,9 @@
     \@afterheading
   }
 \makeatother
-%\chapter{Biographical Sketch}           %~Biographical Sketch is optional
-%\input{biography}                       %<Enter the name of the .tex file containing your
-                                        %   biography or omit this line and type in
-                                        %   your biography here (1 paragraph)
 
+%\biographicalsketch{%                  %~Biographical Sketch is optional
+%  \input{biography}%                   %<Enter the name of the .tex file containing your
+%}%                                     %   biography or omit this line and type in
+                                        %   your biography here (1 paragraph)
 \end{document}
