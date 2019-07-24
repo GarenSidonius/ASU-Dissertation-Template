@@ -982,6 +982,7 @@
 % file containing the text of the
 % biographical sketch.
 \newcommand{\biographicalsketch}[1]{%
+  \bookmarksetup{startatroot}%
   \chapter*{Biographical Sketch}%
   \phantomsection%                      % Need for hyperref
   \addcontentsline{toc}{chapter}{%      % Add a chapter-level heading for
@@ -1157,10 +1158,20 @@
 
 \iftoggle{useendnotes}{%                % If you're using endnotes, output them here
   \setsecnumdepth{none}                 % No section numbering in end notes
-  \printpagenotes
+  \bookmarksetup{startatroot}           % Make Notes appear at root level of PDF bookmarks
+  \phantomsection%                      % Need for hyperref
+  \addcontentsline{toc}{chapter}{%      % Add a chapter-level heading for
+    \hspace{-\cftchapterindent}%        %  Notes to the ToC
+    \notesname%
+  }%
+  \renewcommand*{\notedivision}{%
+    \chapter*{\notesname}%
+  }
+  \printpagenotes                       % Output the notes
   \setsecnumdepth{all}%                 % Turn section numbering back on after printing
 }{}
 
+\bookmarksetup{startatroot}
 \chapter*{\bibheading}                  % In the running text, use a chapter-level heading
                                         % for the bibliography section
 \phantomsection
