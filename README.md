@@ -22,42 +22,44 @@ template offers several new features:
 ## TeX engines
 
 This template will run with either `pdftex` or `xetex`.
-You will probably want to use `xetex` in order to use one of the required fonts, such as Garamond or Century.
-(If you are running the template on your own computer, make sure these fonts are installed on your system before trying to use them with `xetex`.)
+You should probably use `xetex` in order to use one of the required fonts, such as Garamond or Century.
+(If you are running the template on your own computer, make sure these fonts are located where the TeX engine can find and use them.)
 But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may want to use `pdftex` and then check the output periodically with `xetex`.
 
 ## Making PDFs with the template
 
-### On ShareLaTeX
+There are a variety of ways to convert a LaTeX document to a PDF, and many of them are complicated and error prone.
+The current recommendation is to use Docker because it hides some of that complexity.
 
-Start a new project in ShareLaTeX and copy in the files from this repository.
-ShareLaTeX can make a PDF from these TeX files online without your needing to install TeX on your own computer.
-
-### On your own computer
-
-#### Requirements
-
-I recommend that Windows users download and install the latest version of [MiKTeX](http://miktex.org/), and I recommend that Mac users download and install the latest version of [MacTeX](https://tug.org/mactex/).
+For Windows users that do not want to use Docker, I recommend downloading and installing the latest version of [MiKTeX](http://miktex.org/).
+For Mac users that do not want to use Docker, I recommend downloading and installing the latest version of [MacTeX](https://tug.org/mactex/).
 Both of these are large TeX distributions that are (1) easy to install, (2) contain all the packages used in the template, and (3) probably contain any additional packages that you will want to use.
-
-Linux users beware: The LaTeX packages in default repositories are often out of date and may not work with this template, so make sure your packages are up to date.
+For Linux users that do not want to use Docker, beware LaTeX packages in default repositories are often out of date and may not work with this template, so make sure packages are up to date.
 You may need to download packages manually or customize your setup.
-If you're a Linux user, I trust you can get TeX working on your own.
 
-#### Making with latexmk
+Finally, there are online services that can convert LaTeX documents to PDF.
 
-I recommend using `latexmk` to typeset your document.
-`latexmk` is an excellent command line tool that will run and re-run TeX, BibTeX, biber, etc. until the document is completely typeset.
-If you use `latexmk`, you will not need to manually run `pdftex`, then `biber`, then `pdftex` to format citations, for example.
-`latexmk` is usually bundled with TeX distributions, but you can also get it [here](http://users.phys.psu.edu/~collins/software/latexmk-jcc/).
+The rest of this guide describes how to use the template with Docker.
 
-#### Step-by-step: Making the sample file
+### Requirements
+
+Install Docker.
+Follow instructions [here](https://docs.docker.com/get-docker/).
+
+### Overview
+
+    ./build.sh
+    ./latexmk.sh [ latexmk options ] [ target file ]
+
+For example,
+
+    ./latexmk.sh -pdf dissertation_template_latex_sample.tex
+
+### Step-by-step: Making the sample file
 
 To preview the formatting in the full template, you can create a sample using `dissertation_template_latex_sample.tex`.
 
-First, make sure that you have an up-to-date TeX distribution on your system.
-(See the "Requirements" section above.)
-Second, download the template and supporting files to your computer.
+Download the template and supporting files to your computer.
 A couple ways to get these files on your computer are:
 
 1. Click the ["Download ZIP" button](https://github.com/GarenSidonius/ASU-Dissertation-Template/archive/master.zip) on this page, and then unzip the downloaded file.
@@ -70,31 +72,38 @@ For example, enter the following command in the terminal:
 
     cd ~/Downloads/ASU-Dissertation-Template
 
-Finally, use `latexmk` to process the sample file with `xetex` by entering the following in the terminal:
+Create a local Docker image by entering the following in the terminal:
 
-    latexmk -pdf -xelatex dissertation_template_latex_sample.tex
+    ./build.sh
 
-Or use `latexmk` to process the sample file with `pdftex` by entering the following in the terminal:
+Process the sample file with `xetex` by entering the following in the terminal:
 
-    latexmk -pdf dissertation_template_latex_sample.tex
+    ./latexmk.sh -pdf -xelatex dissertation_template_latex_sample.tex
+
+Or process the sample file with `pdftex` by entering the following in the terminal:
+
+    ./latexmk.sh -pdf dissertation_template_latex_sample.tex
 
 Both of these commands should produce a PDF called `dissertation_template_latex_sample.pdf`, which is the sample document.
 
-#### Step-by-step: Making your dissertation/thesis with the template
+### Step-by-step: Making your dissertation/thesis with the template
 
 Follow the same steps for making the sample file in the previous section, but change the name of the `*.tex` file from `dissertation_template_latex_sample.tex` to `dissertation_template_latex.tex`.
-For example, use `latexmk` to process the template file with `xetex` by entering the following in the terminal:
+For example, process the template file with `xetex` by entering the following in the terminal:
 
-    latexmk -pdf -xelatex dissertation_template_latex.tex
+    ./latexmk.sh -pdf -xelatex dissertation_template_latex.tex
 
-#### Continuous preview mode
+### More options for latexmk
 
-`latexmk` also has a continuous preview mode (initiated with the flag `-pvc`), which watches a `*.tex` file and all supporting files (including separate chapter files) for changes.
+Documentation for `latexmk` is available [here](http://personal.psu.edu/jcc8//software/latexmk-jcc/).
+
+One of the more useful options is continuous preview mode (initiated with the flag `-pvc`).
+In this mode, `latexmk` watches a `*.tex` file and all supporting files (including separate chapter files) for changes.
 When any of these files are changed, `latexmk` automatically re-runs TeX and produces a new PDF.
 It's a great tool for checking formatting.
 For example, to use `latexmk` to process the template file with `xetex` in continuous preview mode, open a terminal and enter the following:
 
-    latexmk -pdf -xelatex -pvc dissertation_template_latex.tex
+    ./latexmk.sh -pdf -xelatex -pvc dissertation_template_latex.tex
 
 ## Editing the template
 
@@ -114,7 +123,7 @@ Important warnings are indicated with `%!`.
 
 ### Including other files
 
-Make sure that LaTeX can find any external files that are called in this document (typically, individual chapter files and the bibliography files).
+Make sure that LaTeX can find any external files that are called in this document (typically, individual chapter files and bibliography files and sometimes font files).
 The easiest way to make sure LaTeX can find all the external files is to put them in the same folder as the template file.
 
 ### Supporting documentation
