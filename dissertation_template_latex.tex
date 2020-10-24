@@ -133,8 +133,31 @@
   \defaultfontfeatures{Mapping=tex-text,% Font spec setting
     Scale=MatchLowercase}
   \newcommand*{\euro}{€}
-  \setmainfont{Garamond}                %<Set the main font; make sure the font is correct
+
+  % Using fonts in XeLaTeX can be complicated; the following settings
+  % work when this file is compiled inside the Docker container produced
+  % by the `build.sh` script.
+  %
+  % Sometimes something simple like the following will work:
+  %
+  %   \setmainfont{Garamond}
+  %
+  % But often the easiest solution is to move font files (*.otf or *.ttf) into
+  % a sub-directory and provide the direct path to them here.
+  %
+  % See `fontspec` documentation for more on using local font files.
+  %
+  \setmainfont{EBGaramond12}[           %<Set the main font; make sure the font is correct
                                         %   for the font size (See ASU Style Guide)
+    Path          = /usr/share/fonts/opentype/ebgaramond/,
+    Extension     = .otf ,
+    UprightFont   = *-Regular ,
+    ItalicFont    = *-Italic ,
+    % Notice that bold is missing here because the Docker image does not have
+    % a bold typeface for Garamond; it would probably be possible to find
+    % one on your local system or online.
+  ]
+
 %  \setmathfont(Digits,Latin,Greek)%     %~Uncomment two lines to set a font for math%
 %    {MATHFONT}
 \fi
