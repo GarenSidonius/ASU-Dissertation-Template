@@ -51,12 +51,12 @@
                                         %   split the title across lines,
                                         %   use another \listadd command for the
                                         %   second line
-\newcommand*\Author{Your Name}                      %<Enter your name; must match official transcript
+\newcommand*\Author{Your Name}          %<Enter your name; must match official transcript
 \newcommand*{\documentname}%
   {Dissertation}                        %<Enter the type of document (capitalized)
 \newcommand*{\degreename}
   {Doctor of Philosophy}                %<Enter the type of degree (capitalized)
-\newcommand*\defdate{Month Year}                       %<Give month (written out fully) and year of
+\newcommand*\defdate{Month Year}        %<Give month (written out fully) and year of
                                         %   the oral defense
 \listadd{\committeechair}{Chair Name}   %<Enter committee chair name; use \listadd for
 %\listadd{\committeechair}{Another name}%   for additional names
@@ -405,11 +405,6 @@
   {\titlecap}%                          %   case
 \renewcommand{\cftfigureaftersnumb}%    % Put table captions in List of Figures in title
   {\titlecap}%                          %   case
-
-\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
-  {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
-}%                                      % Note: Necessary due to the 'titlecaps' package
-                                        %   which modifies contents of captions
 
 \renewcommand*{\cftpartpagefont}%       % Use normal font for all page numbers
   {\normalfont}
@@ -815,6 +810,11 @@
   \renewcommand\@memback@floats{}
 \makeatletter
 
+\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
+  {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
+}%                                      % Note: Necessary due to the 'titlecaps' package
+                                        %   which modifies contents of captions
+
 %%% Tables %%%
 %
 % Note: 'memoir' natively supports commands from the following table-related packages:
@@ -888,7 +888,7 @@
 \edef\theonelinetitle%
   {\onelinetitle}
 
-\renewcommand*{\do}[1]{{#1}\ }%         % Build keyword string to output to pdf document
+\renewcommand*{\do}[1]{{#1}\ }%          % Build keyword string to output to pdf document
 \newcommand*{\pdfkeywordsstring}{%
   \dolistloop{\keywords}%
 }
@@ -1149,6 +1149,9 @@
                                         % \subsubsection
                                         % \paragraph
                                         % \subparagraph
+\iftoggle{sample}{%
+  \include{sample_chapter}%
+}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Back matter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1157,7 +1160,6 @@
 \AfterEndEnvironment{figure}{\SingleSpacing}
 \AfterEndEnvironment{quote}{\SingleSpacing}
 \AfterEndEnvironment{quotation}{\SingleSpacing}
-
 
 \edef\defaulttolerance{\the\tolerance}
 \tolerance 500                          % Increase tolerance to prevent material extending into margins
@@ -1241,6 +1243,9 @@
 %\include{appendix2}                     %   \include rather than \input for appendices.
 %\include{appendix3}% etc.               %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc.
+\iftoggle{sample}{%
+  \include{sample_appendix}%
+}{}
 
 \backmatter                             % Start back matter according to documentclass
 \makeatletter                           % Do not clear page after printing title for
