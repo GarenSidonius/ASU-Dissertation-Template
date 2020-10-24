@@ -543,7 +543,8 @@
   %
   % Here is the algorithm:
   %   Floor(Log10(\number)) + 1
-  \LOG[10]{\totfig}{\tempAfig}%
+  \MAX{\totfig}{1}{\figurecount}
+  \LOG[10]{\figurecount}{\tempAfig}%
   \FLOOR{\tempAfig}{\tempBfig}%
   \ADD{\tempBfig}{1}{\digitsinfig}%     % Number of digits in number of figs
   %
@@ -571,7 +572,8 @@
 \pretocmd{\listoftables}{%
   % Calculate the number of digits in
   % the total number of tables
-  \LOG[10]{\tottab}{\tempAtab}%
+  \MAX{\tottab}{1}{\tablecount}
+  \LOG[10]{\tablecount}{\tempAtab}%
   \FLOOR{\tempAtab}{\tempBtab}%
   \ADD{\tempBtab}{1}{\digitsintab}%     % Number of digits in number of tabs
   % Calculate space factor for tables
@@ -1085,13 +1087,18 @@
   }
 
 \clearpage
-\pagestyle{ASUlot}
-\listoftables                           % List of Tables should appear in TOC, so use
+\ifnumcomp{\tottab}{>}{0}{%
+  \pagestyle{ASUlot}
+  \listoftables                         % List of Tables should appear in TOC, so use
                                         %   unstarred version of \listoftables
-\clearpage
-\pagestyle{ASUlof}
-\listoffigures                          % List of Figures should appear in TOC, so use
+  \clearpage
+}{}
+
+\ifnumcomp{\totfig}{>}{0}{%
+  \pagestyle{ASUlof}
+  \listoffigures                        % List of Figures should appear in TOC, so use
                                         %   unstarred version of \listoffigures
+}{}
 
 %\chapter{Definitions}                  %~OTHER LISTS (optional)
 %\input{definitions}                    %<Enter the name of the .tex file or omit this
