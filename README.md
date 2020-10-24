@@ -145,4 +145,4 @@ Otherwise, I can be contacted by email: Robert Kutter (robert@kutterconsulting.c
 
 Find out more about me and my work here: <http://kutterconsulting.com>
 
-Copyright 2019 Robert W. Kutter
+Copyright 2020 Robert W. Kutter
