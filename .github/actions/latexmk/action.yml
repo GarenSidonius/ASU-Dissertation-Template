@@ -1,0 +1,23 @@
+name: 'latexmk'
+description: 'Build documents with latexmk'
+
+inputs:
+
+  engine:
+    description: 'LaTeX engine to use (as a latexmk option)'
+    required: false
+
+  source:
+    description: 'TeX filename to send to latexmk'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '-f'
+    - '-cd'
+    - '-interaction=batchmode'
+    - '-pdf'
+    - ${{ inputs.engine }}
+    - ${{ inputs.source }}

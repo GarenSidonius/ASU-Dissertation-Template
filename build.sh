@@ -10,4 +10,4 @@ if [ $# -eq 0 ]
     tag=$1
 fi
 
-docker build -t asudis:$tag .
+docker build --no-cache -t asudis:$tag .github/actions/sample

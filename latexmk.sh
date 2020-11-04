@@ -12,4 +12,4 @@
 # $ ./latexmk.sh -cd -interaction=batchmode -pdf dissertation_template_latex_sample.tex
 #
 IMAGE=asudis:latest
-exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" perl /usr/local/bin/latexmk/latexmk.pl "$@"
+exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" "$@"
