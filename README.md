@@ -78,20 +78,24 @@ Create a local Docker image by entering the following in the terminal:
 
 Process the sample file with `xetex` by entering the following in the terminal:
 
-    ./latexmk.sh -pdf -xelatex dissertation_template_latex_sample.tex
+    ./latexmk.sh -f -cd -interaction=batchmode -pdf -xelatex \
+    dissertation_template_latex_sample.tex
 
 Or process the sample file with `pdftex` by entering the following in the terminal:
 
-    ./latexmk.sh -pdf dissertation_template_latex_sample.tex
+    ./latexmk.sh -f -cd -interaction=batchmode -pdf \
+    dissertation_template_latex_sample.tex
 
 Both of these commands should produce a PDF called `dissertation_template_latex_sample.pdf`, which is the sample document.
+(Don't use the `-f` option all the time; it seems to be necessary to get the first run to complete successfully at the moment.)
 
 ### Step-by-step: Making your dissertation/thesis with the template
 
 Follow the same steps for making the sample file in the previous section, but change the name of the `*.tex` file from `dissertation_template_latex_sample.tex` to `dissertation_template_latex.tex`.
 For example, process the template file with `xetex` by entering the following in the terminal:
 
-    ./latexmk.sh -pdf -xelatex dissertation_template_latex.tex
+    ./latexmk.sh -cd -interaction=batchmode -pdf -xelatex \
+    dissertation_template_latex.tex
 
 ### More options for latexmk
 
