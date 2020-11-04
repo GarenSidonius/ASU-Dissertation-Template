@@ -775,10 +775,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\bibfilename}{sample_library}%<Enter the name of the *.bib file containing the
-                                        %   reference information for sources cited in
-                                        %   the text. God help you if you're doing
+\newcommand{\bibfilename}{%             %<Enter the name of the *.bib file containing the
+  src/sample/library%                   %   reference information for sources cited in
+}%                                      %   the text. God help you if you're doing
                                         %   citations manually.
+
 \newcommand{\bibheading}{References}    %<Enter the heading for the references section:
                                         %   'References', 'Works Cited', or 'Bibliography'
 
@@ -809,9 +810,9 @@
   \MakeOuterQuote{"}%                   %   error when used with natbib
 }{%                                     % Settings for 'natbib'
   \usepackage{natbib}%
-  \newcommand{\natbibstyle}{asudis}%    %~Enter the name of the *.bst file to use to
-                                        %   format citations with natbib. Default is
-                                        %   'asudis'. I do not know where 'asudis' came
+  \newcommand{\natbibstyle}{%           %~Enter the name of the *.bst file to use to
+    src/asudis%                         %   format citations with natbib. Default is
+  }%                                    %   'asudis'. I do not know where 'asudis' came
                                         %   from, but apparently it formats citations
                                         %   correctly because it was included with the
                                         %   previous LaTeX template.
@@ -1079,7 +1080,7 @@
 \frontmatter
 
 \chapter*{Abstract}                     % Abstract is required
-\input{sample_abstract}                 %<Enter the name of the .tex file containing your
+\input{src/sample/abstract}             %<Enter the name of the .tex file containing your
                                         %   your abstract or omit this line and type in
                                         %   your abstract here.
 
@@ -1087,12 +1088,12 @@
 %\clearpage                             %~If you don't wish to display the heading
                                         %   'Dedication', comment out the previous line
                                         %   and use this one instead.
-\input{sample_dedication}               %<Enter the name of the .tex file containing your
+\input{src/sample/dedication}           %<Enter the name of the .tex file containing your
                                         %   your dedication or omit this line and type in
                                         %   your dedication here.
 
 \chapter*{Acknowledgments}              %~Acknowledgments are optional
-\input{sample_acknowledgments}          %<Enter the name of the .tex file containing your
+\input{src/sample/acknowledgments}      %<Enter the name of the .tex file containing your
                                         %   acknowledgments or omit this line and type in
                                         %   your acknowledgments here.
 
@@ -1173,7 +1174,7 @@
                                         % \paragraph
                                         % \subparagraph
 \iftoggle{sample}{%
-  \include{sample_chapter}%
+  \include{src/sample/chapter}%
 }{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Back matter
@@ -1267,7 +1268,7 @@
 %\include{appendix3}% etc.               %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc.
 \iftoggle{sample}{%
-  \include{sample_appendix}%
+  \include{src/sample/appendix}%
 }{}
 
 \backmatter                             % Start back matter according to documentclass
