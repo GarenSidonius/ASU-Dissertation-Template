@@ -1,3 +1,5 @@
+![CI](https://github.com/GarenSidonius/ASU-Dissertation-Template/workflows/CI/badge.svg)
+
 ASU Dissertation Template
 =========================
 
