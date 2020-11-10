@@ -1,0 +1,10 @@
+attr
+PyMuPDF
+pytest
+titlecase
+
+# dev requirements
+# if this list grows, split into separate requirements file
+black
+sphinx
+sphinx_rtd_theme

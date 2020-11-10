@@ -52,10 +52,13 @@ Follow instructions [here](https://docs.docker.com/get-docker/).
 
     ./build.sh
     ./latexmk.sh [ latexmk options ] [ target file ]
+    ./check.sh [ target file ]
 
 For example,
 
+    ./build.sh
     ./latexmk.sh -pdf dissertation_template_latex_sample.tex
+    ./check.sh dissertation_template_latex_sample.pdf
 
 ### Step-by-step: Making the sample file
 
@@ -110,6 +113,16 @@ It's a great tool for checking formatting.
 For example, to use `latexmk` to process the template file with `xetex` in continuous preview mode, open a terminal and enter the following:
 
     ./latexmk.sh -pdf -xelatex -pvc dissertation_template_latex.tex
+
+### Test PDF Formatting
+
+Run cursory tests for PDF formatting with `check.sh`, for example,
+
+    ./check.sh dissertation_template_latex_sample.pdf
+
+Currently these tests are not comprehensive, and do not guarantee passing format review by the Graduate College.
+They just check some aspects of the title page, margins, and fonts.
+To send a signal to me that it is worth spending time expanding this part of the project, please open issues for more comprehensive testing.
 
 ## Editing the template
 

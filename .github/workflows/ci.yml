@@ -3,26 +3,25 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+
   build-sample-on-linux:
     name: 'Build sample document on Linux'
     runs-on: ubuntu-latest
+    # Currently unused; part of process to share sample PDF
+    #   via environment variable
+    # outputs:
+    #   sample_pdf_content: ${{ steps.dump_sample.outputs.sample }}
     steps:
       # Checks out the repository under $GITHUB_WORKSPACE,
       # so the job can access it
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Build sample with XeLaTeX
-        uses: ./.github/actions/latexmk
-        with:
-          engine: '-xelatex'
-          source: 'dissertation_template_latex_sample.tex'
-
-      - name: Build sample with pdfLaTeX
+      - name: Build template with pdfLaTeX
         uses: ./.github/actions/latexmk
         with:
           engine: ''
-          source: 'dissertation_template_latex_sample.tex'
+          source: 'dissertation_template_latex.tex'
 
       - name: Build template with XeLaTeX
         uses: ./.github/actions/latexmk
@@ -30,8 +29,66 @@ jobs:
           engine: '-xelatex'
           source: 'dissertation_template_latex.tex'
 
-      - name: Build template with pdfLaTeX
+      - name: Build sample with pdfLaTeX
         uses: ./.github/actions/latexmk
         with:
           engine: ''
-          source: 'dissertation_template_latex.tex'
+          source: 'dissertation_template_latex_sample.tex'
+
+      - name: Build sample with XeLaTeX
+        uses: ./.github/actions/latexmk
+        with:
+          engine: '-xelatex'
+          source: 'dissertation_template_latex_sample.tex'
+          path: 'dissertation_template_latex_sample.pdf'
+
+      # Currently unused; part of process to share sample PDF
+      #   via environment variable
+      #
+      # - name: Dump sample PDF contents
+      #   id: dump_sample
+      #   # horrendously abuse environment variables to store the
+      #   # file as a string in a GitHub Action "output" which can be
+      #   # shared between jobs; typically, this would be done with
+      #   # artifacts, but `act` does not support artifacts at the moment
+      #   # and local testing is helpful
+      #   run: |
+      #     PDF_SAMPLE_CONTENT=$( cat dissertation_template_latex.pdf )
+      #     echo "::set-output name=sample::${PDF_SAMPLE_CONTENT}"
+
+      - name: Upload sample
+        uses: actions/upload-artifact@v2
+        with:
+          name: sample
+          path: 'dissertation_template_latex_sample.pdf'
+
+  # test-sample-on-linux:
+  #   name: 'Test sample document on Linux'
+  #   runs-on: ubuntu-latest
+  #   needs: build-sample-on-linux
+  #   defaults:
+  #     run:
+  #       working-directory: .github/actions/pdfcheck
+  #   steps:
+  #     - name: Check out repository
+  #       uses: actions/checkout@v2
+
+  #     # Currently unused; part of process to share sample PDF
+  #     #   via environment variable
+  #     #
+  #     # - name: Create sample PDF from previous job
+  #     #   run: |
+  #     #     cat <<EOF > sample.pdf
+  #     #     ${{needs.build-sample-on-linux.outputs.sample_pdf_content}}
+  #     #     EOF
+
+  #     - name: Get sample
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: sample
+  #         path: 'sample.pdf'
+
+  #     - name: Check sample PDF
+  #       uses: ./.github/actions/pdfcheck
+  #       with:
+  #         source: 'sample.pdf'

@@ -11,3 +11,5 @@ if [ $# -eq 0 ]
 fi
 
 docker build --no-cache -t asudis:$tag .github/actions/latexmk
+
+docker build --no-cache -t pdfcheck:$tag .github/actions/pdfcheck

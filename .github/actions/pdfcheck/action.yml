@@ -1,0 +1,33 @@
+# DO NOT USE
+#
+# This does not work as intended yet.
+#
+name: 'pdfcheck'
+description: 'Check PDF against ASU dissertation format guide'
+
+inputs:
+  source:
+    description: 'PDF filename to check'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - 'python'
+    - '-m'
+    - 'pytest'
+    - '${{ env.GITHUB_WORKSPACE }}/.github/actions/pdfcheck'
+    - '-s'
+    - '-r w'
+    - '--tb=line'
+    - '--verbosity=1'
+    - '-W ignore::DeprecationWarning'
+    - '--rootdir=/github/workspace/.github/actions/pdfcheck'
+    - '--pdf'
+    - ${{ env.GITHUB_WORKSPACE }}
+    - '.github'
+    - 'actions'
+    - 'pdfcheck'
+    - ${{ inputs.source }}
+  shell: bash
