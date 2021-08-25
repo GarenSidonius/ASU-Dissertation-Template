@@ -1,4 +1,12 @@
-FROM blang/latex:ubuntu AS asudis
+FROM debian:bullseye AS ASUDIS
+ENV DEBIAN_FRONTEND noninteractive
+
+# From the old blang/latex:ubuntu
+RUN apt-get update -q && apt-get install -qy \
+    texlive-full \
+    python3-pygments gnuplot \
+    make git \
+    && rm -rf /var/lib/apt/lists/*
 
 # install additional software
 RUN apt-get update \
@@ -10,6 +18,9 @@ RUN apt-get update \
     && apt-get -qq clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
+
+WORKDIR /data
+VOLUME ["/data"]
 
 # download the very latest latexmk
 RUN wget -P /usr/local/bin http://mirrors.ctan.org/support/latexmk.zip \
