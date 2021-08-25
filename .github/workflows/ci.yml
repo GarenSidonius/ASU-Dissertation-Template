@@ -40,7 +40,6 @@ jobs:
         with:
           engine: '-xelatex'
           source: 'dissertation_template_latex_sample.tex'
-          path: 'dissertation_template_latex_sample.pdf'
 
       # Currently unused; part of process to share sample PDF
       #   via environment variable
