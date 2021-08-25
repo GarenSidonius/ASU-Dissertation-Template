@@ -1263,12 +1263,12 @@
                                         %   lines down and checking the output until
                                         %   the TOC headers appear correctly
 
-%\include{appendix1}                     %~Insert your appendices here; I recommend to use
-%\include{appendix2}                     %   \include rather than \input for appendices.
-%\include{appendix3}% etc.               %   All heading commands are the same as above,
+%\input{appendix1}                       %~Insert your appendices here; I recommend to use
+%\input{appendix2}                       %   \input rather than \include for appendices.
+%\input{appendix3}% etc.                 %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc.
 \iftoggle{sample}{%
-  \include{src/sample/appendix}%
+  \input{src/sample/appendix}%
 }{}
 
 \backmatter                             % Start back matter according to documentclass
