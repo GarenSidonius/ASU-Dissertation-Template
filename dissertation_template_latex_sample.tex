@@ -148,15 +148,20 @@
   %
   % See `fontspec` documentation for more on using local font files.
   %
-  \setmainfont{EBGaramond12}[           %<Set the main font; make sure the font is correct
-                                        %   for the font size (See ASU Style Guide)
-    Path          = /usr/share/fonts/opentype/ebgaramond/,
+  % Demo only
+  %
+  % Demonstrate how to use a local font.
+  % To actually use, would probably want to find a font with a
+  % bold typeface and if the dissertation contains math, use the 
+  % font for math, as well.
+  %
+  % Font source (OFL licensed): https://fontesk.com/mels-font/
+  %
+  \setmainfont{Mels}[%
+    Path          = fonts/mels/ ,
     Extension     = .otf ,
     UprightFont   = *-Regular ,
     ItalicFont    = *-Italic ,
-    % Notice that bold is missing here because the Docker image does not have
-    % a bold typeface for Garamond; it would probably be possible to find
-    % one on your local system or online.
   ]
 
 %  \setmathfont(Digits,Latin,Greek)%     %~Uncomment two lines to set a font for math%
