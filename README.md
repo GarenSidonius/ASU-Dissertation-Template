@@ -30,18 +30,8 @@ But `pdftex` sometimes runs much faster than `xetex`, so for drafting, you may w
 
 ## Making PDFs with the template
 
-There are a variety of ways to convert a LaTeX document to a PDF, and many of them are complicated and error prone.
-The current recommendation is to use Docker because it hides some of that complexity.
-
-For Windows users that do not want to use Docker, I recommend downloading and installing the latest version of [MiKTeX](http://miktex.org/).
-For Mac users that do not want to use Docker, I recommend downloading and installing the latest version of [MacTeX](https://tug.org/mactex/).
-Both of these are large TeX distributions that are (1) easy to install, (2) contain all the packages used in the template, and (3) probably contain any additional packages that you will want to use.
-For Linux users that do not want to use Docker, beware LaTeX packages in default repositories are often out of date and may not work with this template, so make sure packages are up to date.
-You may need to download packages manually or customize your setup.
-
-Finally, there are online services that can convert LaTeX documents to PDF.
-
-The rest of this guide describes how to use the template with Docker.
+There are a variety of ways to convert a LaTeX document to a PDF (e.g., [MiKTeX](http://miktex.org/) and [MacTeX](https://tug.org/mactex/)).
+But help with using the template from its author is only available for the Docker workflow described below because there are too many LaTeX platforms to be able to support them all.
 
 ### Requirements
 
